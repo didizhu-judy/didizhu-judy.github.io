@@ -1,7 +1,7 @@
 
 # 📝 Publications 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICML 2024</div><img src='images/fs.png' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICML 2024</div><img src='images/model_tailor.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [Model Tailor: Mitigating Catastrophic Forgetting in Multi-modal Large Language Models.]([https://papers.nips.cc/paper/8580-fastspeech-fast-robust-and-controllable-text-to-speech.pdf](https://arxiv.org/abs/2402.12048)) \\
@@ -15,7 +15,7 @@
 </div>
 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">KDD 2024</div><img src='images/fs2.png' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">KDD 2024</div><img src='images/npt.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [Neural Collapse Anchored Prompt Tuning for Generalizable Vision-Language Models.](https://arxiv.org/abs/2306.15955) \\
@@ -27,10 +27,10 @@
 </div>
 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICCV 2023</div><img src='images/mega.png' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICCV 2023</div><img src='images/uniam.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[Universal domain adaptation via compressive attention matching.]([https://openreview.net/forum?id=mvMI3N4AvD](https://openaccess.thecvf.com/content/ICCV2023/papers/Zhu_Universal_Domain_Adaptation_via_Compressive_Attention_Matching_ICCV_2023_paper.pdf)) \\ 
+[Universal domain adaptation via compressive attention matching.]([https://openreview.net/forum?id=mvMI3N4AvD](https://openaccess.thecvf.com/content/ICCV2023/papers/Zhu_Universal_Domain_Adaptation_via_Compressive_Attention_Matching_ICCV_2023_paper.pdf)) \\
 **Didi Zhu**, Yinchuan Li, Junkun Yuan, Zexi Li, Kun Kuang, Chao Wu
 
   - Addressed the issue of inconsistent source-target label spaces in Universal Domain Adaptation directly using self-attention in ViT.
@@ -38,7 +38,7 @@
 </div>
 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ACM Multimedia 2023</div><img src='images/diffsinger.png' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ACM Multimedia 2023</div><img src='images/gflowda.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [Generalized Universal Domain Adaptation with Generative Flow Networks.](https://arxiv.org/abs/2305.04466) \\
