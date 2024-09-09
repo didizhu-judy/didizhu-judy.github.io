@@ -1,6 +1,14 @@
 # 🔥 News
-- *2024.03*: 🎉 Two papers are accepted by ICLR 2024
-- *2023.05*: 🎉 Five papers are accepted by ACL 2023
-- *2023.01*: DiffSinger was introduced in [a very popular video](https://www.bilibili.com/video/BV1uM411t7ZJ) (2000k+ views) in Bilibili!
-- *2023.01*: I join TikTok <img src='./images/tiktok.png' style='width: 6em;'> as a speech research scientist in Singapore!
-- *2022.02*: I release a modern and responsive academic personal [homepage template](https://github.com/RayeRen/acad-homepage.github.io). Welcome to STAR and FORK!
+- *2024.07*: 🥳 I went to Vienna, Austria to attend the ICML conference.
+- *2024.05*: 🎉 One first-author paper has been accepted to KDD 2024.
+- *2024.05*: 🎉 One first-author paper has been accepted to ICML 2024.
+- *2023.10*: 📚 I start my internship at Tencent Youtu Lab.
+- *2023.10*: 🥳 I went to Paris, France to attend the ICCV conference.
+- *2023.08*: One paper about prompt learning is online.
+- *2023.07*: 🎉 One first-author paper has been accepted to ICCV 2023.
+- *2023.07*: 🎉 One first-author paper has been accepted to ACM Multimedia 2023.
+- *2023.05*: 🎉 One paper has been accepted to KDD 2023.
+- *2022.11*: 🎉 One paper has been accepted to IEEE Transactions on Big Data.
+- *2022.10*: I am presented with Outstanding Postgraduate Student Award on 2021-2022 by Zhejiang University.
+- *2022.05*: 📚 I start my internship at Huawei Noah’s Ark Lab.
+- *2021.05*: 🎉 One paper has been accepted to IJCAI 2021 FL Workshop.
