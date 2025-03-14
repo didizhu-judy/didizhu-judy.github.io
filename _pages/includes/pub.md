@@ -1,10 +1,22 @@
 
 # 📝 Publications 
 
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICLR 2025</div><img src='images/remedy.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[REMEDY: Recipe Merging Dynamics in Large Vision-Language Models
+.](https://openreview.net/pdf?id=iX7eHHE5Tx) \\
+**Didi Zhu**, Yibing Song, Tao Shen, Ziyu Zhao, Jinluan Yang, Min Zhang, Chao Wu
+- First exploration of the LoRA fusion problem in Multimodal Large Language Models
+- Proposing a dynamic fusion scheme enhances zero-shot generalization capability of MLLMs.
+
+</div>
+</div>
+
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICML 2024</div><img src='images/model_tailor.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[Model Tailor: Mitigating Catastrophic Forgetting in Multi-modal Large Language Models.]([https://papers.nips.cc/paper/8580-fastspeech-fast-robust-and-controllable-text-to-speech.pdf](https://arxiv.org/abs/2402.12048)) \\
+[Model Tailor: Mitigating Catastrophic Forgetting in Multi-modal Large Language Models.](https://arxiv.org/abs/2402.12048) \\
 **Didi Zhu**, Zhongyisun Sun, Zexi Li, Tao Shen, Ke Yan, Shouhong Ding, Chao Wu, Kun Kuang
 
 [**Project**](https://github.com/didizhu-zju/Model-Tailor) 
