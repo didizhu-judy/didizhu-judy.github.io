@@ -61,6 +61,13 @@
 </div>
 </div>
 
+- `ICML 2025` [ZeroFlow: Overcoming Catastrophic Forgetting is Easier than You Think](https://scholar.google.com.hk/citations?view_op=view_citation&hl=zh-CN&user=gthqIqIAAAAJ&cstart=20&pagesize=80&citation_for_view=gthqIqIAAAAJ:7H_MAutzIkAC), Tao Feng, Wei Li, DiDi Zhu, Hangjie Yuan, Wendi Zheng, Dan Zhang, Jie Tang.
+- `ICML 2025` [Learn from Downstream and Be Yourself in Multimodal Large Language Model Fine-Tuning](https://scholar.google.com.hk/citations?view_op=view_citation&hl=zh-CN&user=gthqIqIAAAAJ&citation_for_view=gthqIqIAAAAJ:LgRImbQfgY4C), Wenke Huang, Jian Liang, Zekun Shi, Didi Zhu, Guancheng Wan, He Li, Bo Du, Dacheng Tao, Mang Ye.
+- `ICML 2025` [Be Confident: Uncovering Overfitting in MLLM Multi-Task Tuning](), Wenke Huang, Jian Liang, Guancheng Wan, Didi Zhu, He Li, Jiawei Shao, Mang Ye, Bo Du, Dacheng Tao.
+- `ICML 2025` [ERICT: Enhancing Robustness by Identifying Concept Tokens in Zero-Shot Vision Language Models](), Xinpeng Dong, Min Zhang, Didi Zhu, Ye Jun Jian, Zhang Keli, Aimin Zhou, Fei Wu, Kun Kuang.
+- `ICLR 2025` [Mitigating the Backdoor Effect for Multi-Task Model Merging via Safety-Aware Subspace](https://scholar.google.com.hk/citations?view_op=view_citation&hl=zh-CN&user=gthqIqIAAAAJ&citation_for_view=gthqIqIAAAAJ:nVrZBo8bIpAC),Jinluan Yang, Anke Tang, Didi Zhu, Zhengyu Chen, Li Shen, Fei Wu.
+- `ICLR 2025` [Merging loras like playing lego: Pushing the modularity of lora to extremes through rank-wise clustering](https://scholar.google.com.hk/citations?view_op=view_citation&hl=zh-CN&user=gthqIqIAAAAJ&citation_for_view=gthqIqIAAAAJ:fbc8zXXH2BUC), Ziyu Zhao, Tao Shen, Didi Zhu, Zexi Li, Jing Su, Xuwu Wang, Kun Kuang, Fei Wu.
+- `NeurIPS 2024 Workshop` [Improving Group Connectivity for Generalization of Federated Deep Learning](https://scholar.google.com.hk/citations?view_op=view_citation&hl=zh-CN&user=gthqIqIAAAAJ&citation_for_view=gthqIqIAAAAJ:_5tno0g5mFcC), Zexi Li, Jie Lin, Zhiqi Li, Didi Zhu, Rui Ye, Tao Shen, Tao Lin, Chao Wu.
 - `KDD 2023` [Quantitatively Measuring and Contrastively Exploring Heterogeneity for Domain Generalization.](https://arxiv.org/abs/2305.15889), Yunze Tong, Junkun Yuan, Min Zhang, **Didi Zhu**, Keli Zhang, Fei Wu, Kun Kuang.
 - `IEEE Transactions on Big Data` [Towards Effective Clustered Federated Learning: A Peer-to-peer Framework with Adaptive Neighbor Matching.]([https://arxiv.org/abs/2305.15889](https://ieeexplore.ieee.org/abstract/document/9954190)), Zexi Li, Jiaxun Lu, Shuang Luo, **Didi Zhu**, Yunfeng Shao, Yinchuan Li, Zhimeng Zhang, Yongheng Wang, Chao Wu.
 - `IJCAI 2022 Workshop` [Ensemble federated adversarial training with non-iid data.](https://arxiv.org/abs/2110.14814), Shuang Luo, **Didi Zhu**, Zexi Li, Chao Wu.
