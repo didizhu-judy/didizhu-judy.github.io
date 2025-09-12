@@ -1,4 +1,6 @@
 # 🔥 News
+- *2025.07*: 🎉 One co-author paper has been accepted to ICCV 2025.
+- *2025.07*: 🎉 One co-author paper has been accepted to KDD 2025.
 - *2025.05*: 🎉 Four co-author papers have been accepted to ICML 2025.
 - *2025.04*: 🥳 I will attend the ICLR conference in Singapore, welcome to discuss in person.
 - *2025.02*: 🎉 One co-author paper has been accepted to ICLR 2025 Workshop.
