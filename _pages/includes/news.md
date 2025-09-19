@@ -1,4 +1,5 @@
 # 🔥 News
+- *2025.09*: 🎉 One co-author paper has been accepted to NeurIPS 2025.
 - *2025.07*: 🎉 One co-author paper has been accepted to ICCV 2025.
 - *2025.07*: 🎉 One co-author paper has been accepted to KDD 2025.
 - *2025.05*: 🎉 Four co-author papers have been accepted to ICML 2025.
