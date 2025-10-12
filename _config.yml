@@ -7,7 +7,7 @@
 
 # Site Settings
 title                    : "Didi Zhu (朱迪迪)"
-description              : "Phd Student in Zhejiang University."
+description              : "Postdoctoral Research Associate at Imperial College London."
 google_scholar_stats_use_cdn : true
 
 # google analytics
@@ -22,8 +22,8 @@ baidu_site_verification  : code-ZxFK3f4pfb
 author:
   name             : "Didi Zhu (朱迪迪)"
   avatar           : "images/myprofile2.png"
-  bio              : "Zhejiang University"
-  location         : "Hangzhou"
+  bio              : "Imperial College London"
+  location         : "London, the United Kingdom"
   employer         :
   pubmed           : 
   googlescholar    : "https://scholar.google.com.hk/citations?user=gthqIqIAAAAJ&hl=zh-CN&oi=ao"
@@ -42,7 +42,7 @@ author:
   instagram        :
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
-  linkedin         : 
+  linkedin         : https://www.linkedin.com/in/didizhu/
   dblp             : 
   orcid            : 
   pinterest        :
