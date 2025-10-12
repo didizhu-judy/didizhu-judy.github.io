@@ -17,3 +17,7 @@
 - NeurIPS 2025, ICCV 2025, ICLR 2025, KDD 2025
 - KDD 2024, TIP, Machine Learning Journal, MM 2024
 - MM 2023
+
+# Miscellaneous
+Having just arrived in London, I'm thoroughly enjoying exploring this vibrant city and capturing its moments through my camera. If you're also based here, I would be delighted to connect over coffee and exchange ideas.
+
