@@ -5,7 +5,7 @@
 - *2016.09 - 2020.06*, Undergraduate, Computer Science and Technology, Beijing University of Chemical Technology, Beijing.
 
 # Research Experiences
-- *2025.06 - Present*, Imperial College London, London, United Kingdom.
+- *2025.09 - Present*, Imperial College London, London, United Kingdom.
 
 # Industry Experiences
 - *2024.03 - 2025.03*, Alibaba DAMO Academy, Hangzhou, China.
