@@ -1,7 +1,7 @@
 
 # 📝 Publications 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Project 2025</div><img src='images/llavaovrl.png' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Tech Report 2025</div><img src='images/llavaovrl.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [LLaVA-OneVision-1.5-RL: Unlocking Multimodal Reasoning via Lightweight Reinforcement Learning](https://mvp-ai-lab.github.io/LLaVA-OneVision-1.5-RL/) \\

@@ -27,7 +27,7 @@ author:
   employer         :
   pubmed           : 
   googlescholar    : "https://scholar.google.com.hk/citations?user=gthqIqIAAAAJ&hl=zh-CN&oi=ao"
-  email            : "didi_zhu@zju.edu.cn"
+  email            : "d_zhu@imperial.ac.uk"
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :
@@ -36,13 +36,13 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : 
+  github           : "https://github.com/didizhu-judy"
   google_plus      :
   keybase          :
   instagram        :
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
-  linkedin         : https://www.linkedin.com/in/didizhu/
+  linkedin         : "https://www.linkedin.com/in/didizhu/"
   dblp             : 
   orcid            : 
   pinterest        :
@@ -50,7 +50,7 @@ author:
   stackoverflow    : # http://stackoverflow.com/users/123456/username
   steam            :
   tumblr           :
-  twitter          : 
+  twitter          : "https://x.com/judddyzhu"
   vine             :
   weibo            :
   xing             :
