@@ -6,10 +6,8 @@
 
 [LLaVA-OneVision-1.5-RL: Unlocking Multimodal Reasoning via Lightweight Reinforcement Learning](https://mvp-ai-lab.github.io/LLaVA-OneVision-1.5-RL/) \\
 **Didi Zhu** (First Author, RL Section), Zhiyu Qu, Zerui Chen, Polydefkis Gkagkos, Xiang An, Bo Li \\
-RL Section of Technical Report \\
-Project Leaders: Changrui Chen, Jiankang Deng
-
-[**Project**](https://mvp-ai-lab.github.io/LLaVA-OneVision-1.5-RL/) | [**Code**](https://github.com/mvp-ai-lab/LLaVA-OneVision-1.5-RL) | [**Models**](https://huggingface.co/collections/mvp-ai-lab/llava-onevision-15-rl-67k) | [**Data**](https://huggingface.co/datasets/mvp-ai-lab/LLaVA-OneVision-1.5-RL-67K)
+RL Section of Technical Report. Project Leaders: Changrui Chen, Jiankang Deng \\
+[**Project**](https://mvp-ai-lab.github.io/LLaVA-OneVision-1.5-RL/)|[**Code**](https://github.com/mvp-ai-lab/LLaVA-OneVision-1.5-RL)|[**Models**](https://huggingface.co/collections/mvp-ai-lab/llava-onevision-15-rl-67k)|[**Data**](https://huggingface.co/datasets/mvp-ai-lab/LLaVA-OneVision-1.5-RL-67K)
 
 - Leveraging lightweight RL framework (GRPO) on top of supervised instruct model to elicit latent reasoning capabilities.
 - Using only 67K curated examples with discrepancy-based selection, significantly boosting performance on complex STEM, Coding, and Reasoning tasks.
