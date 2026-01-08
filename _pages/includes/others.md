@@ -13,7 +13,7 @@
 
 # Services
 **Reviewers**
-- ICLR 2026, KDD 2026
+- CVPR 2026, ICLR 2026, KDD 2026
 - NeurIPS 2025, ICCV 2025, ICLR 2025, KDD 2025
 - KDD 2024, TIP, Machine Learning Journal, MM 2024
 - MM 2023
