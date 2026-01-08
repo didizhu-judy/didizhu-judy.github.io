@@ -1,4 +1,5 @@
 # 🔥 News
+- *2025.12*: 🚀 Released [LLaVA-OneVision-1.5-RL](https://mvp-ai-lab.github.io/LLaVA-OneVision-1.5-RL/), a fully open framework for democratized multimodal reinforcement learning, where I served as a core contributor.
 - *2025.09*: 🎉 One first-author paper has been accepted to NeurIPS 2025 Multimodal Algorithmic Reasoning Workshop.
 - *2025.09*: 🎉 One co-author paper has been accepted to NeurIPS 2025.
 - *2025.07*: 🎉 One co-author paper has been accepted to ICCV 2025.
