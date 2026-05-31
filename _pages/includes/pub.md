@@ -5,7 +5,7 @@
 <div class='paper-box-text' markdown="1">
 
 [LLaVA-OneVision-2: Towards Next-Generation Perceptual Intelligence](https://evolvinglmms-lab.github.io/LLaVA-OneVision-2/) \\
-Xiang An, Yin Xie, Feilong Tang, Yunyao Yan, Huajie Tan, **Didi Zhu** (Core Contributor), Changrui Chen, Xiuwei Zhao, Bin Qin, Kaicheng Yang, et al. \\
+Xiang An, Yin Xie, Feilong Tang, Yunyao Yan, Huajie Tan, **Didi Zhu**, Changrui Chen, Xiuwei Zhao, Bin Qin, Kaicheng Yang, et al. \\
 Project Leaders: Bo Li, Ziyong Feng, Ziwei Liu, Zongyuan Ge, Jiankang Deng \\
 [**Project**](https://evolvinglmms-lab.github.io/LLaVA-OneVision-2/)|[**Paper**](https://arxiv.org/abs/2605.25979)|[**Code**](https://github.com/EvolvingLMMs-Lab/LLaVA-OneVision-2)|[**Models**](https://huggingface.co/lmms-lab-encoder/LLaVA-OneVision-2-8B-Instruct)|[**Data**](https://huggingface.co/datasets/mvp-lab/LLaVA-OneVision-2-Data)|[**Demo**](https://huggingface.co/spaces/FeilongTang/OneVision-Encoder-Codec-View)
 
