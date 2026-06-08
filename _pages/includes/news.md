@@ -1,4 +1,4 @@
-# 🔥 News
+# Recent Highlights
 
 <div class="news-panel">
   <ul class="news-list news-list--recent">

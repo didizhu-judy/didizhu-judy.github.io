@@ -6,8 +6,8 @@
 # `jekyll serve`. If you change this file, please restart the server process.
 
 # Site Settings
-title                    : "Didi Zhu (朱迪迪)"
-description              : "Collecting moments, not just things."
+title                    : "Didi Zhu"
+description              : "Reliable multimodal reasoning for changing worlds."
 google_scholar_stats_use_cdn : true
 
 # google analytics
@@ -20,7 +20,7 @@ baidu_site_verification  : code-ZxFK3f4pfb
 
 # Site Author
 author:
-  name             : "Didi Zhu (朱迪迪)"
+  name             : "Didi Zhu"
   avatar           : "images/myprofile2.png"
   bio              : "Imperial College London"
   location         : "London, the United Kingdom"

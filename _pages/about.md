@@ -2,13 +2,16 @@
 permalink: /
 title: ""
 excerpt: ""
-author_profile: true
+author_profile: false
+body_class: home-page
 redirect_from: 
   - /about/
   - /about.html
 ---
 
 <span class='anchor' id='about-me'></span>
+{% include_relative includes/profile_hero.md %}
+
 # About Me
 
 <div class="home-intro" markdown="1">
