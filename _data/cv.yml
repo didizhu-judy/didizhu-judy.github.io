@@ -1,0 +1,52 @@
+# Experience, honors and service. Text fields accept Markdown.
+
+experience:
+  - group: Position
+    items:
+      - period: "Sep 2025 – now"
+        role: "Postdoctoral Research Associate"
+        org: "Imperial College London"
+        where: "Department of Computing · London, UK"
+        note: "Working with [Prof. Jiankang Deng](https://jiankangdeng.github.io/) and [Prof. Stefanos Zafeiriou](https://wp.doc.ic.ac.uk/szafeiri/)."
+
+  - group: Education
+    items:
+      - period: "Sep 2020 – Jun 2025"
+        role: "Ph.D. in Computer Science and Technology"
+        org: "Zhejiang University"
+        where: "Hangzhou, China"
+        note: "Advised by [Prof. Chao Wu](https://wuchaozju.github.io/), co-supervised by [Prof. Kun Kuang](https://kunkuang.github.io/) and [Prof. Fei Wu](https://mypage.zju.edu.cn/wufei)."
+      - period: "Sep 2016 – Jun 2020"
+        role: "B.S. in Computer Science and Technology"
+        org: "Beijing University of Chemical Technology"
+        where: "Beijing, China"
+
+  - group: Industry
+    items:
+      - period: "Mar 2024 – Mar 2025"
+        role: "Research Intern, Multimodal LLMs"
+        org: "Alibaba DAMO Academy"
+        where: "Hangzhou, China"
+        note: "With Yibing Song. Led to [REMEDY](#pub-zhu2025remedy) (ICLR 2025)."
+      - period: "Oct 2023 – Feb 2024"
+        role: "Research Intern, Multimodal LLMs"
+        org: "Tencent Youtu Lab"
+        where: "Shanghai, China"
+        note: "With Zhongyi Sun. Led to [Model Tailor](#pub-zhu2024model) (ICML 2024)."
+
+honors:
+  - year: "2024"
+    name: "National Scholarship"
+    detail: "Ph.D. · top 5%"
+  - year: "2020"
+    name: "Beijing Outstanding Graduate"
+    detail: "Top 1%"
+  - year: "2017–2019"
+    name: "National Scholarship, three times"
+    detail: "Undergraduate · top 1%"
+
+service:
+  - kind: "Conference reviewer"
+    venues: [CVPR, ECCV, ICCV, ICLR, NeurIPS, KDD, ACM MM]
+  - kind: "Journal reviewer"
+    venues: ["IEEE TIP", "Machine Learning"]

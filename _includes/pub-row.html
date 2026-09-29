@@ -1,0 +1,16 @@
+{%- assign p = include.pub -%}
+{%- assign primary = p.links | first -%}
+<li class="pub" id="pub-{{ p.id }}" data-themes="{{ p.themes | join: ' ' }}" data-first="{% if p.first_author %}true{% else %}false{% endif %}">
+  <div class="pub__venue">
+    <span class="venue venue--{{ p.type }}">{{ p.venue }}</span>
+  </div>
+  <div class="pub__main">
+    <h5 class="pub__title"><a href="{{ primary.url }}">{{ p.title }}</a></h5>
+    <p class="authors">{% include authors.html pub=p %}</p>
+    {%- capture lead -%}
+      {%- if p.role %}<span class="role role--{{ p.role }}">{% if p.role_note %}{{ p.role_note }}{% elsif p.role == "first" %}First author{% elsif p.role == "cofirst" %}Co-first author{% elsif p.role == "core" %}Core contributor{% endif %}</span>{% endif -%}
+      {%- for t in p.themes %}<span class="theme-tag theme-tag--{{ t }}">{{ t | capitalize }}</span>{% endfor -%}
+    {%- endcapture %}
+    {% include pub-links.html pub=p scope="row" lead=lead %}
+  </div>
+</li>

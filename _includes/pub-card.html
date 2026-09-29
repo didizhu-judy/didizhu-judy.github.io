@@ -1,0 +1,22 @@
+{%- assign p = include.pub -%}
+{%- assign primary = p.links | first -%}
+<article class="feat">
+  <a class="feat__media" href="{{ primary.url }}" tabindex="-1">
+    <img src="{{ p.image | relative_url }}" width="{{ p.image_w }}" height="{{ p.image_h }}" alt="{{ p.image_alt | escape }}" loading="lazy" decoding="async">
+  </a>
+  <div class="feat__body">
+    <div class="feat__meta">
+      <span class="venue venue--{{ p.type }}">{{ p.venue }}</span>
+      {%- if p.role %}
+      <span class="role role--{{ p.role }}">{% if p.role_note %}{{ p.role_note }}{% elsif p.role == "first" %}First author{% elsif p.role == "cofirst" %}Co-first author{% elsif p.role == "core" %}Core contributor{% endif %}</span>
+      {%- endif %}
+      <span class="feat__themes" aria-hidden="true">{% for t in p.themes %}<span class="dot dot--{{ t }}"></span>{% endfor %}</span>
+    </div>
+    {%- assign head = p.title | split: ": " | first -%}
+    {%- assign tail = p.title | remove_first: head | remove_first: ": " %}
+    <h4 class="feat__title"><a href="{{ primary.url }}"><span class="feat__head">{{ head }}</span>{% if tail != "" %}<span class="sr-only">: </span><span class="feat__tail">{{ tail }}</span>{% endif %}</a></h4>
+    <p class="authors">{% include authors.html pub=p %}</p>
+    <p class="feat__tldr">{{ p.tldr }}</p>
+    {% include pub-links.html pub=p scope="feat" %}
+  </div>
+</article>

@@ -1,0 +1,228 @@
+---
+layout: default
+body_class: home
+redirect_from:
+  - /about/
+  - /about.html
+---
+{%- assign pubs = site.data.publications -%}
+{%- assign selected = pubs | where: "selected", true -%}
+{%- assign projects = pubs | where: "project", true -%}
+
+<section class="hero container" aria-labelledby="hero-name">
+  <canvas class="hero__field" data-field aria-hidden="true"></canvas>
+  <div class="hero__text">
+    <p class="eyebrow">{{ site.author.role }} · <a href="{{ site.author.org_url }}">{{ site.author.org }}</a></p>
+    <h1 id="hero-name" class="hero__name" data-split>{{ site.author.name }}</h1>
+
+    <p class="hero__lead">
+      I work on <em>post-training</em> large multimodal models: reinforcement learning for reasoning and perception, verifiable rewards, and the data and evaluation pipelines behind open model releases. A growing part of my work is on <em>multimodal agents</em> and <em>generation</em>.
+    </p>
+
+    <div class="hero__bio">
+      <p>At Imperial, I work with <a href="https://jiankangdeng.github.io/">Prof. Jiankang Deng</a> and <a href="https://wp.doc.ic.ac.uk/szafeiri/">Prof. Stefanos Zafeiriou</a>. I received my Ph.D. from Zhejiang University, advised by <a href="https://wuchaozju.github.io/">Prof. Chao Wu</a> and co-supervised by <a href="https://kunkuang.github.io/">Prof. Kun Kuang</a> and <a href="https://mypage.zju.edu.cn/wufei">Prof. Fei Wu</a>, and was fortunate to collaborate with Yibing Song at Alibaba DAMO Academy.</p>
+      <p>I am always open to collaborations and conversations with fellow researchers. Recently in London, I have been collecting sunsets, parks, coffee conversations, and new research questions.</p>
+    </div>
+
+    <ul class="hero__links" aria-label="Contact and profiles">
+      <li class="email-group">
+        <a class="btn btn--primary" href="mailto:{{ site.author.email }}">{% include icon.html name="mail" %}<span>Email</span></a>
+        <button class="icon-btn icon-btn--outline" type="button" data-copy-text="{{ site.author.email }}" data-copy-label="Email address" aria-label="Copy email address">{% include icon.html name="copy" %}</button>
+      </li>
+      <li><a class="btn" href="{{ site.author.scholar }}">{% include icon.html name="scholar" %}<span>Google Scholar</span></a></li>
+      <li><a class="btn" href="{{ site.author.github }}">{% include icon.html name="github" %}<span>GitHub</span></a></li>
+      <li><a class="btn" href="{{ site.author.linkedin }}">{% include icon.html name="linkedin" %}<span>LinkedIn</span></a></li>
+      <li><a class="btn" href="{{ site.author.x }}">{% include icon.html name="x" %}<span>X</span></a></li>
+    </ul>
+  </div>
+
+  <div class="hero__portrait">
+    <div class="portrait-frame">
+    <img class="portrait"
+         src="{{ '/images/profile/avatar-640.webp' | relative_url }}"
+         srcset="{{ '/images/profile/avatar-320.webp' | relative_url }} 320w, {{ '/images/profile/avatar-640.webp' | relative_url }} 640w"
+         sizes="(min-width: 860px) 320px, 200px"
+         width="640" height="640" alt="Photo of {{ site.author.name }}" fetchpriority="high" decoding="async">
+    </div>
+  </div>
+</section>
+
+<section id="news" class="section container" aria-labelledby="news-title">
+  <header class="section__head">
+    <div class="section__heading">
+      <span class="section__num" aria-hidden="true">01</span>
+      <h2 id="news-title" class="section__title">News</h2>
+    </div>
+  </header>
+  <div class="section__body">
+    <ol class="news" data-news>
+      {%- for item in site.data.news %}
+      <li class="news__item{% if forloop.index > 6 %} is-extra{% endif %}" data-date="{{ item.date | date: '%Y-%m-%d' }}">
+        <time class="news__date" datetime="{{ item.date | date: '%Y-%m' }}">{{ item.date | date: "%b %Y" }}</time>
+        <span class="news__kind news__kind--{{ item.kind }}">{{ item.kind | capitalize }}</span>
+        <p class="news__text">{{ item.text | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>
+      </li>
+      {%- endfor %}
+    </ol>
+    <button class="btn btn--ghost news__toggle" type="button" aria-expanded="false" data-news-toggle hidden>
+      <span data-news-toggle-label>Show all {{ site.data.news | size }} updates</span>{% include icon.html name="arrow-down" %}
+    </button>
+  </div>
+</section>
+
+<section id="research" class="section container" aria-labelledby="research-title">
+  <header class="section__head">
+    <div class="section__heading">
+      <span class="section__num" aria-hidden="true">02</span>
+      <h2 id="research-title" class="section__title">Research</h2>
+    </div>
+    <p class="section__lede">A path from making vision–language models robust, to composing their skills, to teaching them to reason, and now to connecting understanding with generation.</p>
+  </header>
+  <ol class="arc">
+    {%- for t in site.data.research %}
+    {%- assign n = pubs | where_exp: "p", "p.themes contains t.id" | size %}
+    <li class="arc__node arc__node--{{ t.id }}" style="--i: {{ forloop.index0 }}">
+      <div class="arc__rail" aria-hidden="true"><span class="arc__dot"></span></div>
+      <p class="arc__period"><span class="arc__index">0{{ forloop.index }}</span>{{ t.period }}</p>
+      <h3 class="arc__name">{{ t.name }}</h3>
+      <p class="arc__title">{{ t.title }}</p>
+      <p class="arc__summary">{{ t.summary }}</p>
+      <ul class="arc__works" aria-label="Key {{ t.name }} papers">
+        {%- for id in t.works %}
+        {%- assign w = pubs | where: "id", id | first %}
+        <li><a href="#pub-{{ w.id }}">{{ w.short | default: w.title }}</a><span class="venue venue--plain">{{ w.venue }}</span></li>
+        {%- endfor %}
+      </ul>
+      <a class="arc__more" href="?theme={{ t.id }}#all-publications" data-theme-link="{{ t.id }}">{{ n }} papers{% include icon.html name="arrow-right" %}</a>
+    </li>
+    {%- endfor %}
+  </ol>
+</section>
+
+<section id="projects" class="section container" aria-labelledby="projects-title">
+  <header class="section__head">
+    <div class="section__heading">
+      <span class="section__num" aria-hidden="true">03</span>
+      <h2 id="projects-title" class="section__title">Projects</h2>
+    </div>
+    <p class="section__lede">Open multimodal model releases I have worked on, with code, data and checkpoints.</p>
+  </header>
+  <div class="feat-grid">
+    {%- for p in projects %}
+    {% include pub-card.html pub=p %}
+    {%- endfor %}
+  </div>
+</section>
+
+<section id="publications" class="section container" aria-labelledby="pubs-title">
+  <header class="section__head">
+    <div class="section__heading">
+      <span class="section__num" aria-hidden="true">04</span>
+      <h2 id="pubs-title" class="section__title">Publications</h2>
+    </div>
+    <p class="section__lede">Selected first-author papers, then everything, newest first. <a href="{{ site.author.scholar }}">Google Scholar</a> has citation counts.</p>
+  </header>
+
+  <h3 class="sub-title">Selected</h3>
+  <div class="feat-grid">
+    {%- for p in selected %}
+    {% include pub-card.html pub=p %}
+    {%- endfor %}
+  </div>
+
+  <div id="all-publications" class="pubs">
+    <div class="pubs__bar">
+      <h3 class="sub-title">All publications</h3>
+      <div class="filters" role="group" aria-label="Filter publications by theme">
+        <button class="filter" type="button" aria-pressed="true" data-theme-filter="all">All<span class="filter__count">{{ pubs | size }}</span></button>
+        {%- for t in site.data.research %}
+        {%- assign n = pubs | where_exp: "p", "p.themes contains t.id" | size %}
+        <button class="filter filter--{{ t.id }}" type="button" aria-pressed="false" data-theme-filter="{{ t.id }}"><span class="dot dot--{{ t.id }}" aria-hidden="true"></span>{{ t.name }}<span class="filter__count">{{ n }}</span></button>
+        {%- endfor %}
+        <label class="switch">
+          <input type="checkbox" data-first-filter>
+          <span class="switch__track" aria-hidden="true"></span>
+          <span>First author only</span>
+        </label>
+      </div>
+      <p class="pubs__status" data-pub-status aria-live="polite"></p>
+    </div>
+
+    {%- assign years = pubs | group_by: "year" %}
+    {%- for y in years %}
+    <section class="year" data-year aria-labelledby="year-{{ y.name }}">
+      <h4 class="year__label" id="year-{{ y.name }}">{{ y.name }}</h4>
+      <ol class="pub-list">
+        {%- for p in y.items %}
+        {% include pub-row.html pub=p %}
+        {%- endfor %}
+      </ol>
+    </section>
+    {%- endfor %}
+    <p class="pubs__empty" data-pub-empty hidden>No papers match these filters. <button class="linkish" type="button" data-filter-reset>Show all papers</button></p>
+  </div>
+</section>
+
+<section id="experience" class="section container" aria-labelledby="exp-title">
+  <header class="section__head">
+    <div class="section__heading">
+      <span class="section__num" aria-hidden="true">05</span>
+      <h2 id="exp-title" class="section__title">Experience</h2>
+    </div>
+  </header>
+  <div class="timeline">
+    {%- for g in site.data.cv.experience %}
+    <div class="timeline__group">
+      <h3 class="timeline__label">{{ g.group }}</h3>
+      <ol class="timeline__list">
+        {%- for it in g.items %}
+        <li class="timeline__item">
+          <p class="timeline__period">{{ it.period }}</p>
+          <div class="timeline__body">
+            <h4 class="timeline__role">{{ it.role }}</h4>
+            <p class="timeline__org">{{ it.org }}<span class="timeline__where">{{ it.where }}</span></p>
+            {%- if it.note %}
+            <p class="timeline__note">{{ it.note | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>
+            {%- endif %}
+          </div>
+        </li>
+        {%- endfor %}
+      </ol>
+    </div>
+    {%- endfor %}
+  </div>
+</section>
+
+<section id="service" class="section container" aria-labelledby="service-title">
+  <header class="section__head">
+    <div class="section__heading">
+      <span class="section__num" aria-hidden="true">06</span>
+      <h2 id="service-title" class="section__title">Honors &amp; Service</h2>
+    </div>
+  </header>
+  <div class="split">
+    <div class="panel">
+      <h3 class="sub-title">Honors</h3>
+      <ul class="honors">
+        {%- for h in site.data.cv.honors %}
+        <li class="honors__item">
+          <span class="honors__year">{{ h.year }}</span>
+          <span class="honors__name">{{ h.name }}</span>
+          <span class="honors__detail">{{ h.detail }}</span>
+        </li>
+        {%- endfor %}
+      </ul>
+    </div>
+    <div class="panel">
+      <h3 class="sub-title">Service</h3>
+      {%- for s in site.data.cv.service %}
+      <div class="service">
+        <p class="service__kind">{{ s.kind }}</p>
+        <ul class="chips">
+          {%- for v in s.venues %}<li>{{ v }}</li>{%- endfor %}
+        </ul>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>

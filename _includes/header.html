@@ -1,0 +1,28 @@
+<header class="site-header" data-header>
+  <div class="container site-header__inner">
+    <a class="wordmark" href="{{ '/' | relative_url }}#top" aria-label="{{ site.author.name }}, back to top">
+      <span class="wordmark__dot" aria-hidden="true"></span>{{ site.author.name }}
+    </a>
+    <nav class="site-nav" id="site-nav" aria-label="Sections">
+      <ul>
+        <li><a href="{{ '/' | relative_url }}#news" data-nav="news">News</a></li>
+        <li><a href="{{ '/' | relative_url }}#research" data-nav="research">Research</a></li>
+        <li><a href="{{ '/' | relative_url }}#projects" data-nav="projects">Projects</a></li>
+        <li><a href="{{ '/' | relative_url }}#publications" data-nav="publications">Publications</a></li>
+        <li><a href="{{ '/' | relative_url }}#experience" data-nav="experience">Experience</a></li>
+        <li><a href="{{ '/' | relative_url }}#service" data-nav="service">Service</a></li>
+      </ul>
+    </nav>
+    <div class="site-header__actions">
+      <a class="btn btn--small btn--ghost header-contact" href="mailto:{{ site.author.email }}">{% include icon.html name="mail" %}<span>Contact</span></a>
+      <button class="icon-btn theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark theme">
+        <span class="theme-toggle__sun">{% include icon.html name="sun" %}</span>
+        <span class="theme-toggle__moon">{% include icon.html name="moon" %}</span>
+      </button>
+      <button class="icon-btn menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="site-nav" aria-label="Open section menu">
+        <span class="menu-toggle__open">{% include icon.html name="menu" %}</span>
+        <span class="menu-toggle__close">{% include icon.html name="close" %}</span>
+      </button>
+    </div>
+  </div>
+</header>

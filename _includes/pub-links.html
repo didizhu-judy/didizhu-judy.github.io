@@ -1,0 +1,22 @@
+{%- comment -%} Link row for a publication, plus the BibTeX toggle. {%- endcomment -%}
+{%- assign p = include.pub -%}
+<div class="links">
+  {%- if include.lead and include.lead != "" %}<span class="links__lead">{{ include.lead }}</span>{% endif -%}
+  {%- for l in p.links -%}
+  {%- case l.label -%}
+    {%- when "Code" -%}{%- assign ic = "code" -%}
+    {%- when "Project" -%}{%- assign ic = "globe" -%}
+    {%- when "Models" -%}{%- assign ic = "box" -%}
+    {%- when "Data" -%}{%- assign ic = "database" -%}
+    {%- when "Demo" -%}{%- assign ic = "play" -%}
+    {%- else -%}{%- assign ic = "paper" -%}
+  {%- endcase %}
+  <a class="link-chip" href="{{ l.url }}">{% include icon.html name=ic %}<span>{{ l.label }}</span></a>
+  {%- endfor %}
+  <button class="link-chip bib-toggle" type="button" aria-expanded="false" aria-controls="bib-{{ include.scope }}-{{ p.id }}">{% include icon.html name="braces" %}<span>BibTeX</span></button>
+</div>
+<div class="bib" id="bib-{{ include.scope }}-{{ p.id }}" hidden>
+  {%- capture bib -%}{% include bibtex.html pub=p %}{%- endcapture %}
+  <pre><code translate="no">{{ bib | strip | escape }}</code></pre>
+  <button class="bib__copy" type="button" data-copy-from="bib-{{ include.scope }}-{{ p.id }}">{% include icon.html name="copy" %}<span>Copy</span></button>
+</div>

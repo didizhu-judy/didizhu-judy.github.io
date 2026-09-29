@@ -1,0 +1,96 @@
+# News, newest first. `text` is Markdown. `kind` sets the small label:
+#   paper · release · career · travel
+# Items from the last 90 days get a "New" badge automatically.
+# The six newest are shown until a visitor clicks "Show all".
+
+- date: 2026-09-26
+  kind: paper
+  text: "[AdaViG](https://arxiv.org/abs/2607.10004) accepted to **NeurIPS 2026**: a training-free gate that decides when a unified multimodal model should draw while it reasons."
+
+- date: 2026-06-05
+  kind: release
+  text: "Released [VisualFLIP](https://didizhu-judy.github.io/VisualFLIP/) (first author), a paired benchmark that tests whether MLLM predictions actually depend on task-critical visual evidence."
+
+- date: 2026-05-01
+  kind: paper
+  text: "Co-author paper on [flow-based GRPO for visual generation](https://arxiv.org/abs/2602.06422) accepted to **ICML 2026**."
+
+- date: 2026-04-01
+  kind: release
+  text: "Released [LLaVA-OneVision-2](https://evolvinglmms-lab.github.io/LLaVA-OneVision-2/), an open 8B multimodal foundation model unifying image, long-video and spatial understanding. I served as a core contributor."
+
+- date: 2025-12-01
+  kind: release
+  text: "Released [LLaVA-OneVision-1.5-RL](https://mvp-ai-lab.github.io/LLaVA-OneVision-1.5-RL/), a fully open recipe for lightweight multimodal RL. I led the RL section as first author."
+
+- date: 2025-09-15
+  kind: career
+  text: "Joined **Imperial College London** as a Postdoctoral Research Associate, working with Prof. Jiankang Deng and Prof. Stefanos Zafeiriou."
+
+- date: 2025-09-10
+  kind: paper
+  text: "First-author paper [Watch Wider and Think Deeper](https://arxiv.org/abs/2601.02422) accepted to the **NeurIPS 2025** Workshop on Multimodal Algorithmic Reasoning."
+
+- date: 2025-09-05
+  kind: paper
+  text: "Co-author paper [Mix Data or Merge Models?](https://arxiv.org/abs/2502.06876) accepted to **NeurIPS 2025**."
+
+- date: 2025-07-01
+  kind: paper
+  text: "Co-author papers accepted to **ICCV 2025** ([text-to-image misalignment](https://openaccess.thecvf.com/content/ICCV2025/html/Tong_Decoding_Correlation-Induced_Misalignment_in_the_Stable_Diffusion_Workflow_for_Text-to-Image_ICCV_2025_paper.html)) and **KDD 2025** ([FedGuCci](https://arxiv.org/abs/2402.18949))."
+
+- date: 2025-06-01
+  kind: career
+  text: "Received my **Ph.D.** in Computer Science and Technology from Zhejiang University."
+
+- date: 2025-05-01
+  kind: paper
+  text: "Four co-author papers accepted to **ICML 2025**."
+
+- date: 2025-04-01
+  kind: travel
+  text: "Attended **ICLR 2025** in Singapore."
+
+- date: 2025-02-01
+  kind: paper
+  text: "Co-author paper accepted to the **ICLR 2025** FL Workshop."
+
+- date: 2025-01-01
+  kind: paper
+  text: "Three papers accepted to **ICLR 2025**, including first-author [REMEDY](https://openreview.net/forum?id=iX7eHHE5Tx)."
+
+- date: 2024-07-01
+  kind: travel
+  text: "Attended **ICML 2024** in Vienna, Austria."
+
+- date: 2024-05-02
+  kind: paper
+  text: "First-author paper [Model Tailor](https://arxiv.org/abs/2402.12048) accepted to **ICML 2024**."
+
+- date: 2024-05-01
+  kind: paper
+  text: "First-author paper [Neural Collapse Anchored Prompt Tuning](https://arxiv.org/abs/2306.15955) accepted to **KDD 2024**."
+
+- date: 2023-10-01
+  kind: travel
+  text: "Attended **ICCV 2023** in Paris, France."
+
+- date: 2023-07-02
+  kind: paper
+  text: "First-author paper [Universal Domain Adaptation via Compressive Attention Matching](https://openaccess.thecvf.com/content/ICCV2023/html/Zhu_Universal_Domain_Adaptation_via_Compressive_Attention_Matching_ICCV_2023_paper.html) accepted to **ICCV 2023**."
+
+- date: 2023-07-01
+  kind: paper
+  text: "First-author paper [Generalized Universal Domain Adaptation with Generative Flow Networks](https://arxiv.org/abs/2305.04466) accepted to **ACM MM 2023**."
+
+- date: 2023-05-01
+  kind: paper
+  text: "Co-author paper accepted to **KDD 2023**."
+
+- date: 2022-11-01
+  kind: paper
+  text: "Co-author paper accepted to **IEEE Transactions on Big Data**."
+
+- date: 2021-05-01
+  kind: paper
+  text: "Co-author paper accepted to the **IJCAI 2021** FL Workshop (FTL-IJCAI)."

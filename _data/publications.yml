@@ -1,0 +1,462 @@
+# Publications, newest first. The full list on the homepage is grouped by `year`.
+#
+# Fields
+#   id          BibTeX key (unique)
+#   title       paper title
+#   authors     comma-separated; mark equal contribution with * (e.g. "Didi Zhu*")
+#   authors_display  optional shorter author line for very long lists
+#   short       optional short name used under the research themes
+#   venue       short label shown on the site, e.g. "ICML 2025"
+#   venue_full  booktitle / journal used in the generated BibTeX
+#   type        conference | workshop | journal | preprint | report
+#   year        used to group the full list
+#   themes      any of: align, compose, reason, generate (see _data/research.yml)
+#   first_author  true if first or co-first author (drives the "First author" filter)
+#   role        optional badge: first | cofirst | core
+#   role_note   optional text that replaces the default badge text
+#   selected    true to feature it under Publications > Selected (first-author papers)
+#   project     true to feature it under Projects instead (open model releases)
+#   image       figure for selected papers (+ image_w / image_h in pixels, image_alt)
+#   tldr        one or two sentences for selected papers
+#   arxiv       arXiv id, used for the BibTeX eprint field
+#   bibtex_type / howpublished / bib_note   optional BibTeX overrides
+#   links       ordered list of {label, url}; the first one is the title link
+
+- id: gao2026adavig
+  title: "Model Guides You How to Draw: Adaptive Visual Gating for Unified Multimodal Reasoning"
+  short: AdaViG
+  authors: "Wenxi Gao, Guanxi Lu, Didi Zhu, Hao Mark Chen, Quan Deng, Zhican Wang, Jiankang Deng, Hongxiang Fan"
+  venue: "NeurIPS 2026"
+  venue_full: "Advances in Neural Information Processing Systems (NeurIPS)"
+  type: conference
+  year: 2026
+  themes: [reason, generate]
+  image: images/pubs/adavig.webp
+  image_w: 1200
+  image_h: 578
+  image_alt: "AdaViG figure: a fixed paradigm draws a misleading diagram and answers wrongly, while the adaptive paradigm aborts the harmful image and answers correctly."
+  tldr: "A training-free gate that stops a unified model from drawing unhelpful images mid-reasoning: up to 5.7% higher accuracy with 25–91% fewer visual-generation FLOPs."
+  arxiv: "2607.10004"
+  links:
+    - { label: Paper, url: "https://arxiv.org/abs/2607.10004" }
+
+- id: zhu2026visualflip
+  title: "VisualFLIP: Do Predictions Depend on Task-Critical Visual Evidence in Multimodal Reasoning?"
+  short: VisualFLIP
+  authors: "Didi Zhu, Changrui Chen, Stefanos Zafeiriou, Jiankang Deng"
+  venue: "arXiv 2026"
+  venue_full: "arXiv preprint arXiv:2606.07872"
+  type: preprint
+  year: 2026
+  themes: [reason]
+  first_author: true
+  role: first
+  selected: true
+  image: images/pubs/visualflip.webp
+  image_w: 1200
+  image_h: 835
+  image_alt: "VisualFLIP example: after a minimal edit flips the correct option from B to E, the model keeps answering B."
+  tldr: "A paired benchmark of 1,374 images that tests whether MLLM answers change when the task-critical visual evidence changes."
+  arxiv: "2606.07872"
+  links:
+    - { label: Paper, url: "https://arxiv.org/abs/2606.07872" }
+    - { label: Project, url: "https://didizhu-judy.github.io/VisualFLIP/" }
+    - { label: Code, url: "https://github.com/didizhu-judy/VisualFLIP" }
+
+- id: an2026llavaonevision2
+  title: "LLaVA-OneVision-2: Towards Next-Generation Perceptual Intelligence"
+  short: LLaVA-OneVision-2
+  authors: "Xiang An, Yin Xie, Feilong Tang, Yunyao Yan, Huajie Tan, Didi Zhu, Changrui Chen, Xiuwei Zhao, Bin Qin, Kaicheng Yang, Yifei Shen, Yuanhan Zhang, Kaichen Zhang, Wenkang Zhang, Zheng Cheng, Nansen Zhang, Chunsheng Wu, Chunjiang Ge, Zimin Ran, Dehua Song, Chunyuan Li, Shikun Feng, Ming Hu, Zhangquan Chen, Junbo Niu, Bo Li, Ziyong Feng, Ziwei Liu, Zongyuan Ge, Jiankang Deng"
+  authors_display: "Xiang An, Yin Xie, Feilong Tang, Yunyao Yan, Huajie Tan, Didi Zhu, Changrui Chen, Xiuwei Zhao, Bin Qin, Kaicheng Yang, et al."
+  venue: "Tech Report 2026"
+  venue_full: "arXiv preprint arXiv:2605.25979"
+  type: report
+  year: 2026
+  themes: [reason]
+  role: core
+  project: true
+  image: images/pubs/llava-ov2.webp
+  image_w: 793
+  image_h: 487
+  image_alt: "LLaVA-OneVision-2 architecture: the OneVision-Encoder turns native-resolution images and long videos, as I- and P-frame tokens, into vision tokens for an LLM decoder."
+  tldr: "An open 8B model unifying image, long-video and spatial understanding. I worked on the video data engine and evaluation."
+  arxiv: "2605.25979"
+  links:
+    - { label: Project, url: "https://evolvinglmms-lab.github.io/LLaVA-OneVision-2/" }
+    - { label: Paper, url: "https://arxiv.org/abs/2605.25979" }
+    - { label: Code, url: "https://github.com/EvolvingLMMs-Lab/LLaVA-OneVision-2" }
+    - { label: Models, url: "https://huggingface.co/lmms-lab-encoder/LLaVA-OneVision-2-8B-Instruct" }
+    - { label: Data, url: "https://huggingface.co/datasets/mvp-lab/LLaVA-OneVision-2-Data" }
+    - { label: Demo, url: "https://huggingface.co/spaces/FeilongTang/OneVision-Encoder-Codec-View" }
+
+- id: tong2026alleviating
+  title: "Alleviating Sparse Rewards by Modeling Step-Wise and Long-Term Sampling Effects in Flow-Based GRPO"
+  short: Sparse rewards in flow GRPO
+  authors: "Yunze Tong, Mushui Liu, Canyu Zhao, Didi Zhu, Wanggui He, Shiyi Zhang, Hongwei Zhang, Peng Zhang, Jinlong Liu, Hao Jiang"
+  venue: "ICML 2026"
+  venue_full: "Proceedings of the International Conference on Machine Learning (ICML)"
+  type: conference
+  year: 2026
+  themes: [generate]
+  arxiv: "2602.06422"
+  links:
+    - { label: Paper, url: "https://arxiv.org/abs/2602.06422" }
+
+- id: zhao2026smora
+  title: "Each Rank Could be an Expert: Single-Ranked Mixture of Experts LoRA for Multi-Task Learning"
+  authors: "Ziyu Zhao, Yixiao Zhou, Zhi Zhang, Didi Zhu, Tao Shen, Zexi Li, Jinluan Yang, Xuwu Wang, Jing Su, Kun Kuang, Zhongyu Wei, Fei Wu, Yu Cheng"
+  venue: "KDD 2026"
+  venue_full: "Proceedings of the ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD)"
+  type: conference
+  year: 2026
+  themes: [compose]
+  arxiv: "2501.15103"
+  links:
+    - { label: Paper, url: "https://arxiv.org/abs/2501.15103" }
+
+- id: tong2026infinityedit
+  title: "InfinityEdit: Infinite Video Editing with a Lightweight Edit-Ignition Adapter"
+  authors: "Yunze Tong, Mushui Liu, Canyu Zhao, Shiyi Zhang, Didi Zhu, Peng Zhang, Wanggui He, Jinlong Liu, Ying Chen, Hao Jiang, Pipei Huang, Bo Zheng"
+  venue: "arXiv 2026"
+  venue_full: "arXiv preprint arXiv:2608.20910"
+  type: preprint
+  year: 2026
+  themes: [generate]
+  arxiv: "2608.20910"
+  links:
+    - { label: Paper, url: "https://arxiv.org/abs/2608.20910" }
+
+- id: zhu2025llavaonevision15rl
+  title: "LLaVA-OneVision-1.5-RL: Unlocking Multimodal Reasoning via Lightweight Reinforcement Learning"
+  short: LLaVA-OneVision-1.5-RL
+  authors: "Didi Zhu, Zhiyu Qu, Zerui Chen, Polydefkis Gkagkos, Xiang An, Bo Li"
+  venue: "Tech Report 2025"
+  venue_full: "RL section of the LLaVA-OneVision-1.5 technical report"
+  bibtex_type: misc
+  howpublished: "\\url{https://mvp-ai-lab.github.io/LLaVA-OneVision-1.5-RL/}"
+  bib_note: "RL section of the LLaVA-OneVision-1.5 technical report, arXiv:2509.23661"
+  type: report
+  year: 2025
+  themes: [reason]
+  first_author: true
+  role: first
+  role_note: "First author · RL section"
+  project: true
+  image: images/pubs/llava-ov15-rl.webp
+  image_w: 1008
+  image_h: 386
+  image_alt: "Donut charts of the 67K-example RL training set by task category: an answer-only first stage and a chain-of-thought second stage dominated by STEM."
+  tldr: "Lightweight two-stage GRPO on 67K difficulty-filtered examples, with clear gains on STEM, coding and reasoning."
+  arxiv: "2509.23661"
+  links:
+    - { label: Project, url: "https://mvp-ai-lab.github.io/LLaVA-OneVision-1.5-RL/" }
+    - { label: Paper, url: "https://arxiv.org/abs/2509.23661" }
+    - { label: Code, url: "https://github.com/mvp-ai-lab/LLaVA-OneVision-1.5-RL" }
+    - { label: Models, url: "https://huggingface.co/mvp-lab/LLAVA-OV-1.5-8B-RL" }
+    - { label: Data, url: "https://huggingface.co/datasets/mvp-lab/LLaVA-OneVision-1.5-RL-Data" }
+
+- id: an2025llavaonevision15
+  title: "LLaVA-OneVision-1.5: Fully Open Framework for Democratized Multimodal Training"
+  authors: "Xiang An, Yin Xie, Kaicheng Yang, Wenkang Zhang, Xiuwei Zhao, Zheng Cheng, Yirui Wang, Songcen Xu, Changrui Chen, Didi Zhu, Chunsheng Wu, Huajie Tan, Chunyuan Li, Jing Yang, Jie Yu, Xiyao Wang, Bin Qin, Yumeng Wang, Zizhen Yan, Ziyong Feng, Ziwei Liu, Bo Li, Jiankang Deng"
+  authors_display: "Xiang An, Yin Xie, Kaicheng Yang, Wenkang Zhang, Xiuwei Zhao, Zheng Cheng, Yirui Wang, Songcen Xu, Changrui Chen, Didi Zhu, et al."
+  venue: "Tech Report 2025"
+  venue_full: "arXiv preprint arXiv:2509.23661"
+  type: report
+  year: 2025
+  themes: [reason]
+  role: core
+  arxiv: "2509.23661"
+  links:
+    - { label: Paper, url: "https://arxiv.org/abs/2509.23661" }
+
+- id: lu2025watch
+  title: "Watch Wider and Think Deeper: Collaborative Cross-modal Chain-of-Thought for Complex Visual Reasoning"
+  authors: "Wenting Lu*, Didi Zhu*, Tao Shen, Donglin Zhu, Ayong Ye, Chao Wu"
+  venue: "NeurIPS 2025 Workshop"
+  venue_full: "NeurIPS 2025 Workshop on Multimodal Algorithmic Reasoning"
+  type: workshop
+  year: 2025
+  themes: [reason]
+  first_author: true
+  role: cofirst
+  arxiv: "2601.02422"
+  links:
+    - { label: Paper, url: "https://arxiv.org/abs/2601.02422" }
+
+- id: tong2025decoding
+  title: "Decoding Correlation-Induced Misalignment in the Stable Diffusion Workflow for Text-to-Image Generation"
+  short: Correlation-induced misalignment
+  authors: "Yunze Tong, Fengda Zhang, Didi Zhu, Jun Xiao, Kun Kuang"
+  venue: "ICCV 2025"
+  venue_full: "Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)"
+  type: conference
+  year: 2025
+  themes: [generate]
+  links:
+    - { label: Paper, url: "https://openaccess.thecvf.com/content/ICCV2025/html/Tong_Decoding_Correlation-Induced_Misalignment_in_the_Stable_Diffusion_Workflow_for_Text-to-Image_ICCV_2025_paper.html" }
+
+- id: tong2025noise
+  title: "Noise Projection: Closing the Prompt-Agnostic Gap Behind Text-to-Image Misalignment in Diffusion Models"
+  authors: "Yunze Tong, Didi Zhu, Zijing Hu, Jinluan Yang, Ziyu Zhao"
+  venue: "arXiv 2025"
+  venue_full: "arXiv preprint arXiv:2510.14526"
+  type: preprint
+  year: 2025
+  themes: [generate]
+  arxiv: "2510.14526"
+  links:
+    - { label: Paper, url: "https://arxiv.org/abs/2510.14526" }
+
+- id: yang2025mix
+  title: "Mix Data or Merge Models? Balancing the Helpfulness, Honesty, and Harmlessness of Large Language Model via Model Merging"
+  authors: "Jinluan Yang, Dingnan Jin, Anke Tang, Li Shen, Didi Zhu, Zhengyu Chen, Ziyu Zhao, Daixin Wang, Qing Cui, Zhiqiang Zhang, Jun Zhou, Fei Wu, Kun Kuang"
+  venue: "NeurIPS 2025"
+  venue_full: "Advances in Neural Information Processing Systems (NeurIPS)"
+  type: conference
+  year: 2025
+  themes: [compose]
+  arxiv: "2502.06876"
+  links:
+    - { label: Paper, url: "https://papers.nips.cc/paper_files/paper/2025/hash/a3948805bc5220206f5bfc465de0b1b7-Abstract-Conference.html" }
+    - { label: arXiv, url: "https://arxiv.org/abs/2502.06876" }
+
+- id: dong2025erict
+  title: "ERICT: Enhancing Robustness by Identifying Concept Tokens in Zero-Shot Vision Language Models"
+  authors: "Xinpeng Dong, Min Zhang, Didi Zhu, Ye Jun Jian, Keli Zhang, Aimin Zhou, Fei Wu, Kun Kuang"
+  venue: "ICML 2025"
+  venue_full: "Proceedings of the International Conference on Machine Learning (ICML)"
+  type: conference
+  year: 2025
+  themes: [align]
+  links:
+    - { label: Paper, url: "https://openreview.net/forum?id=ZDsbK7Xx4n" }
+
+- id: feng2025zeroflow
+  title: "ZeroFlow: Overcoming Catastrophic Forgetting is Easier than You Think"
+  authors: "Tao Feng, Wei Li, Didi Zhu, Hangjie Yuan, Wendi Zheng, Dan Zhang, Jie Tang"
+  venue: "ICML 2025"
+  venue_full: "Proceedings of the International Conference on Machine Learning (ICML)"
+  type: conference
+  year: 2025
+  themes: [compose]
+  arxiv: "2501.01045"
+  links:
+    - { label: Paper, url: "https://openreview.net/forum?id=iPDw3O6u3T" }
+    - { label: arXiv, url: "https://arxiv.org/abs/2501.01045" }
+
+- id: huang2025learn
+  title: "Learn from Downstream and Be Yourself in Multimodal Large Language Model Fine-Tuning"
+  authors: "Wenke Huang, Jian Liang, Zekun Shi, Didi Zhu, Guancheng Wan, He Li, Bo Du, Dacheng Tao, Mang Ye"
+  venue: "ICML 2025"
+  venue_full: "Proceedings of the International Conference on Machine Learning (ICML)"
+  type: conference
+  year: 2025
+  themes: [compose]
+  arxiv: "2411.10928"
+  links:
+    - { label: Paper, url: "https://arxiv.org/abs/2411.10928" }
+
+- id: huang2025confident
+  title: "Be Confident: Uncovering Overfitting in MLLM Multi-Task Tuning"
+  authors: "Wenke Huang, Jian Liang, Guancheng Wan, Didi Zhu, He Li, Jiawei Shao, Mang Ye, Bo Du, Dacheng Tao"
+  venue: "ICML 2025"
+  venue_full: "Proceedings of the International Conference on Machine Learning (ICML)"
+  type: conference
+  year: 2025
+  themes: [compose]
+  links:
+    - { label: Paper, url: "https://proceedings.mlr.press/v267/huang25r.html" }
+    - { label: Code, url: "https://github.com/WenkeHuang/NRCA" }
+
+- id: zhu2025remedy
+  title: "REMEDY: Recipe Merging Dynamics in Large Vision-Language Models"
+  short: REMEDY
+  authors: "Didi Zhu, Yibing Song, Tao Shen, Ziyu Zhao, Jinluan Yang, Min Zhang, Chao Wu"
+  venue: "ICLR 2025"
+  venue_full: "International Conference on Learning Representations (ICLR)"
+  type: conference
+  year: 2025
+  themes: [compose]
+  first_author: true
+  role: first
+  selected: true
+  image: images/pubs/remedy.webp
+  image_w: 1200
+  image_h: 388
+  image_alt: "REMEDY example: answers to a map question change with which layers were fine-tuned; tuning the projector and shallow LLM layers gives the right answer."
+  tldr: "Merges reusable modules of vision–language models with input-aware weights, improving both multi-task and zero-shot performance."
+  links:
+    - { label: Paper, url: "https://openreview.net/forum?id=iX7eHHE5Tx" }
+
+- id: yang2025backdoor
+  title: "Mitigating the Backdoor Effect for Multi-Task Model Merging via Safety-Aware Subspace"
+  authors: "Jinluan Yang, Anke Tang, Didi Zhu, Zhengyu Chen, Li Shen, Fei Wu"
+  venue: "ICLR 2025"
+  venue_full: "International Conference on Learning Representations (ICLR)"
+  type: conference
+  year: 2025
+  themes: [compose]
+  arxiv: "2410.13910"
+  links:
+    - { label: Paper, url: "https://openreview.net/forum?id=dqMqAaw7Sq" }
+    - { label: arXiv, url: "https://arxiv.org/abs/2410.13910" }
+
+- id: zhao2025merging
+  title: "Merging LoRAs like Playing LEGO: Pushing the Modularity of LoRA to Extremes Through Rank-Wise Clustering"
+  short: LoRA-LEGO
+  authors: "Ziyu Zhao, Tao Shen, Didi Zhu, Zexi Li, Jing Su, Xuwu Wang, Kun Kuang, Fei Wu"
+  venue: "ICLR 2025"
+  venue_full: "International Conference on Learning Representations (ICLR)"
+  type: conference
+  year: 2025
+  themes: [compose]
+  arxiv: "2409.16167"
+  links:
+    - { label: Paper, url: "https://arxiv.org/abs/2409.16167" }
+
+- id: li2025fedgucci
+  title: "FedGuCci: Making Local Models More Connected in Landscape for Federated Learning"
+  authors: "Zexi Li, Jie Lin, Zhiqi Li, Didi Zhu, Tao Shen, Tao Lin, Chao Wu, Nicholas D. Lane"
+  venue: "KDD 2025"
+  venue_full: "Proceedings of the ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD)"
+  type: conference
+  year: 2025
+  themes: [align]
+  arxiv: "2402.18949"
+  links:
+    - { label: Paper, url: "https://arxiv.org/abs/2402.18949" }
+
+- id: shen2025scaling
+  title: "Will LLMs Scaling Hit the Wall? Breaking Barriers via Distributed Resources on Massive Edge Devices"
+  authors: "Tao Shen*, Didi Zhu*, Ziyu Zhao*, Zexi Li, Chao Wu, Fei Wu"
+  venue: "arXiv 2025"
+  venue_full: "arXiv preprint arXiv:2503.08223"
+  type: preprint
+  year: 2025
+  themes: []
+  first_author: true
+  role: cofirst
+  arxiv: "2503.08223"
+  links:
+    - { label: Paper, url: "https://arxiv.org/abs/2503.08223" }
+
+- id: zhu2024model
+  title: "Model Tailor: Mitigating Catastrophic Forgetting in Multi-modal Large Language Models"
+  short: Model Tailor
+  authors: "Didi Zhu, Zhongyi Sun, Zexi Li, Tao Shen, Ke Yan, Shouhong Ding, Kun Kuang, Chao Wu"
+  venue: "ICML 2024"
+  venue_full: "Proceedings of the International Conference on Machine Learning (ICML)"
+  type: conference
+  year: 2024
+  themes: [compose]
+  first_author: true
+  role: first
+  selected: true
+  image: images/pubs/model-tailor.webp
+  image_w: 1200
+  image_h: 295
+  image_alt: "Model Tailor framework: find a sparse patch of fine-tuned parameters with salience and sensitivity scores, then decorate the patch with a compensation term."
+  tldr: "A training-free fix for catastrophic forgetting in MLLMs: graft a small patch of fine-tuned weights onto the pre-trained model."
+  arxiv: "2402.12048"
+  links:
+    - { label: Paper, url: "https://arxiv.org/abs/2402.12048" }
+    - { label: Code, url: "https://github.com/didizhu-judy/Model-Tailor" }
+
+- id: zhu2024neural
+  title: "Neural Collapse Anchored Prompt Tuning for Generalizable Vision-Language Models"
+  short: NPT
+  authors: "Didi Zhu, Zexi Li, Min Zhang, Junkun Yuan, Jiashuo Liu, Kun Kuang, Chao Wu"
+  venue: "KDD 2024"
+  venue_full: "Proceedings of the ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD)"
+  type: conference
+  year: 2024
+  themes: [align]
+  first_author: true
+  role: first
+  selected: true
+  image: images/pubs/npt.webp
+  image_w: 1200
+  image_h: 312
+  image_alt: "Neural collapse in CLIP on EuroSAT: text and image representations on a sphere, under balanced and imbalanced data, with and without NPT."
+  tldr: "Studies prompt tuning of vision–language models through the lens of neural collapse, and uses it to keep them generalizing under class imbalance."
+  arxiv: "2306.15955"
+  links:
+    - { label: Paper, url: "https://arxiv.org/abs/2306.15955" }
+
+- id: zhu2023universal
+  title: "Universal Domain Adaptation via Compressive Attention Matching"
+  short: UniAM
+  authors: "Didi Zhu, Yinchuan Li, Junkun Yuan, Zexi Li, Kun Kuang, Chao Wu"
+  venue: "ICCV 2023"
+  venue_full: "Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)"
+  type: conference
+  year: 2023
+  themes: [align]
+  first_author: true
+  role: first
+  selected: true
+  image: images/pubs/uniam.webp
+  image_w: 1200
+  image_h: 472
+  image_alt: "UniAM framework: compressive attention matching on ViT attention, with common feature alignment and target class separation."
+  tldr: "Handles mismatched source and target label spaces in universal domain adaptation directly with ViT self-attention, via compressive attention matching."
+  links:
+    - { label: Paper, url: "https://openaccess.thecvf.com/content/ICCV2023/html/Zhu_Universal_Domain_Adaptation_via_Compressive_Attention_Matching_ICCV_2023_paper.html" }
+
+- id: zhu2023generalized
+  title: "Generalized Universal Domain Adaptation with Generative Flow Networks"
+  short: GFlowDA
+  authors: "Didi Zhu, Yinchuan Li, Yunfeng Shao, Jianye Hao, Fei Wu, Kun Kuang, Jun Xiao, Chao Wu"
+  venue: "ACM MM 2023"
+  venue_full: "Proceedings of the ACM International Conference on Multimedia (MM)"
+  type: conference
+  year: 2023
+  themes: [align]
+  first_author: true
+  role: first
+  selected: true
+  image: images/pubs/gflowda.webp
+  image_w: 1200
+  image_h: 463
+  image_alt: "GFlowDA framework: a GFlowNet selects and labels target samples that train the adaptation network, which returns a reward."
+  tldr: "Introduces generalized universal domain adaptation, unifying the label-heterogeneity variants of domain adaptation, and tackles it with exploration-aware active learning based on generative flow networks."
+  arxiv: "2305.04466"
+  links:
+    - { label: Paper, url: "https://arxiv.org/abs/2305.04466" }
+
+- id: tong2023quantitatively
+  title: "Quantitatively Measuring and Contrastively Exploring Heterogeneity for Domain Generalization"
+  authors: "Yunze Tong, Junkun Yuan, Min Zhang, Didi Zhu, Keli Zhang, Fei Wu, Kun Kuang"
+  venue: "KDD 2023"
+  venue_full: "Proceedings of the ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD)"
+  type: conference
+  year: 2023
+  themes: [align]
+  arxiv: "2305.15889"
+  links:
+    - { label: Paper, url: "https://arxiv.org/abs/2305.15889" }
+
+- id: li2022towards
+  title: "Towards Effective Clustered Federated Learning: A Peer-to-peer Framework with Adaptive Neighbor Matching"
+  authors: "Zexi Li, Jiaxun Lu, Shuang Luo, Didi Zhu, Yunfeng Shao, Yinchuan Li, Zhimeng Zhang, Yongheng Wang, Chao Wu"
+  venue: "IEEE TBD 2022"
+  venue_full: "IEEE Transactions on Big Data"
+  type: journal
+  year: 2022
+  themes: [align]
+  arxiv: "2203.12285"
+  links:
+    - { label: Paper, url: "https://ieeexplore.ieee.org/abstract/document/9954190" }
+    - { label: arXiv, url: "https://arxiv.org/abs/2203.12285" }
+
+- id: luo2021ensemble
+  title: "Ensemble Federated Adversarial Training with Non-IID Data"
+  authors: "Shuang Luo, Didi Zhu, Zexi Li, Chao Wu"
+  venue: "IJCAI 2021 Workshop"
+  venue_full: "IJCAI 2021 Workshop on Federated and Transfer Learning for Data Sparsity and Confidentiality (FTL-IJCAI)"
+  type: workshop
+  year: 2021
+  themes: [align]
+  arxiv: "2110.14814"
+  links:
+    - { label: Paper, url: "https://arxiv.org/abs/2110.14814" }

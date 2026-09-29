@@ -1,0 +1,39 @@
+{%- comment -%}
+  Generates a BibTeX entry from a publications.yml record.
+  "First Middle Last" becomes "Last, First Middle"; * markers are dropped.
+{%- endcomment -%}
+{%- assign p = include.pub -%}
+{%- assign lb = "{" -%}
+{%- assign rb = "}" -%}
+{%- assign names = p.authors | remove: "*" | split: ", " -%}
+{%- capture bib_authors -%}
+{%- for n in names -%}
+{%- assign parts = n | strip | split: " " -%}
+{%- assign given_count = parts | size | minus: 1 -%}
+{{- parts | last }}, {{ parts | slice: 0, given_count | join: " " -}}
+{%- unless forloop.last %} and {% endunless -%}
+{%- endfor -%}
+{%- endcapture -%}
+{%- assign etype = p.bibtex_type -%}
+{%- unless etype -%}
+{%- if p.type == "conference" or p.type == "workshop" -%}{%- assign etype = "inproceedings" -%}{%- else -%}{%- assign etype = "article" -%}{%- endif -%}
+{%- endunless -%}
+{%- if etype == "inproceedings" -%}{%- assign container = "booktitle" -%}{%- elsif etype == "article" -%}{%- assign container = "journal" -%}{%- else -%}{%- assign container = nil -%}{%- endif -%}
+@{{ etype }}{{ lb }}{{ p.id }},
+  title     = {{ lb }}{{ lb }}{{ p.title }}{{ rb }}{{ rb }},
+  author    = {{ lb }}{{ bib_authors }}{{ rb }},
+{%- if container %}
+  {{ container | append: "         " | slice: 0, 9 }} = {{ lb }}{{ p.venue_full }}{{ rb }},
+{%- endif -%}
+{%- if p.howpublished %}
+  howpublished = {{ lb }}{{ p.howpublished }}{{ rb }},
+{%- endif -%}
+{%- if p.bib_note %}
+  note      = {{ lb }}{{ p.bib_note }}{{ rb }},
+{%- endif %}
+  year      = {{ lb }}{{ p.year }}{{ rb }}
+{%- if p.arxiv and etype != "misc" %},
+  eprint    = {{ lb }}{{ p.arxiv }}{{ rb }},
+  archivePrefix = {arXiv}
+{%- endif %}
+}

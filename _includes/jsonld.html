@@ -1,0 +1,30 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "url": {{ site.url | append: "/" | jsonify }},
+  "dateModified": {{ site.time | date_to_xmlschema | jsonify }},
+  "mainEntity": {
+    "@type": "Person",
+    "name": {{ site.author.name | jsonify }},
+    "givenName": {{ site.author.given_name | jsonify }},
+    "familyName": {{ site.author.family_name | jsonify }},
+    "jobTitle": {{ site.author.role | jsonify }},
+    "email": {{ site.author.email | prepend: "mailto:" | jsonify }},
+    "image": {{ "/images/profile/avatar-640.webp" | absolute_url | jsonify }},
+    "url": {{ site.url | append: "/" | jsonify }},
+    "worksFor": { "@type": "CollegeOrUniversity", "name": {{ site.author.org | jsonify }}, "url": {{ site.author.org_url | jsonify }} },
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "Zhejiang University" },
+      { "@type": "CollegeOrUniversity", "name": "Beijing University of Chemical Technology" }
+    ],
+    "knowsAbout": ["Multimodal large language models", "Reinforcement learning", "Post-training", "Multimodal agents", "Vision-language models", "Model merging", "Visual generation"],
+    "sameAs": [
+      {{ site.author.scholar | jsonify }},
+      {{ site.author.github | jsonify }},
+      {{ site.author.linkedin | jsonify }},
+      {{ site.author.x | jsonify }}
+    ]
+  }
+}
+</script>

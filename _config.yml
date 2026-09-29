@@ -1,161 +1,61 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your entire site, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# `jekyll serve`. If you change this file, please restart the server process.
+# Site settings -------------------------------------------------------------
+# Content lives in _data/ (news, publications, research, cv). Edit those files
+# to update the homepage; see README.md for a quick guide.
 
-# Site Settings
-title                    : "Didi Zhu"
-description              : "Reliable multimodal reasoning for changing worlds."
-google_scholar_stats_use_cdn : true
+title: "Didi Zhu"
+description: >-
+  Didi Zhu is a Postdoctoral Research Associate at Imperial College London
+  working on post-training of large multimodal models: reinforcement learning
+  for reasoning and perception, verifiable rewards, and increasingly multimodal
+  agents and generation.
+url: "https://didizhu-judy.github.io"
+baseurl: ""
+lang: en
+timezone: Europe/London
 
-# google analytics
-google_analytics_id      : G-SWFCX99KQZ
-
-# SEO Related
-google_site_verification : b_BbOIt7d513ZXYDw-YRMicO6O5tthYiouqWDdWjGTU
-bing_site_verification   : B5AA590E7B9C03956A6F7DEC0F776211
-baidu_site_verification  : code-ZxFK3f4pfb
-
-# Site Author
 author:
-  name             : "Didi Zhu"
-  avatar           : "images/myprofile2.png"
-  bio              : "Imperial College London"
-  location         : "London, the United Kingdom"
-  employer         :
-  pubmed           : 
-  googlescholar    : "https://scholar.google.com.hk/citations?user=gthqIqIAAAAJ&hl=zh-CN&oi=ao"
-  email            : "d_zhu@imperial.ac.uk"
-  researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
-  uri              :
-  bitbucket        :
-  codepen          :
-  dribbble         :
-  flickr           :
-  facebook         :
-  foursquare       :
-  github           : didizhu-judy
-  google_plus      :
-  keybase          :
-  instagram        :
-  impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
-  lastfm           :
-  linkedin         : didizhu
-  dblp             : 
-  orcid            : 
-  pinterest        :
-  soundcloud       :
-  stackoverflow    : # http://stackoverflow.com/users/123456/username
-  steam            :
-  tumblr           :
-  twitter          : judddyzhu
-  vine             :
-  weibo            :
-  xing             :
-  youtube          :
-  wikipedia        :
+  name: "Didi Zhu"
+  given_name: "Didi"
+  family_name: "Zhu"
+  role: "Postdoctoral Research Associate"
+  org: "Imperial College London"
+  org_url: "https://www.imperial.ac.uk/computing/"
+  dept: "Department of Computing"
+  location: "London, United Kingdom"
+  tz: "Europe/London"
+  email: "d_zhu@imperial.ac.uk"
+  scholar: "https://scholar.google.com/citations?user=gthqIqIAAAAJ&hl=en"
+  github: "https://github.com/didizhu-judy"
+  linkedin: "https://www.linkedin.com/in/didizhu"
+  x: "https://x.com/judddyzhu"
+  x_handle: "judddyzhu"
 
+# Analytics & verification ---------------------------------------------------
+google_analytics_id: G-SWFCX99KQZ
+google_site_verification: b_BbOIt7d513ZXYDw-YRMicO6O5tthYiouqWDdWjGTU
+bing_site_verification: B5AA590E7B9C03956A6F7DEC0F776211
+baidu_site_verification: code-ZxFK3f4pfb
 
-# Reading Files
-include:
-  - .htaccess
-  - _pages
-  - files
-exclude:
-  - "*.sublime-project"
-  - "*.sublime-workspace"
-  - .asset-cache
-  - .bundle
-  - .jekyll-assets-cache
-  - .sass-cache
-  - CHANGELOG
-  - Capfile
-  - Gemfile
-  - Gruntfile.js
-  - LICENSE
-  - README
-  - Rakefile
-  - assets/js/_main.js
-  - assets/js/plugins
-  - assets/js/vendor
-  - config
-  - gulpfile.js
-  - log
-  - node_modules
-  - package.json
-  - tmp
-  - vendor
-  - google_scholar_crawler
-  - github_myprofile_updater
-keep_files:
-  - .git
-  - .svn
-encoding: "utf-8"
-markdown_ext: "markdown,mkdown,mkdn,mkd,md"
-
-
-# Conversion
+# Build ----------------------------------------------------------------------
 markdown: kramdown
-highlighter: rouge
-lsi: false
-excerpt_separator: "\n\n"
-incremental: false
-
-
-# Markdown Processing
 kramdown:
   input: GFM
   hard_wrap: false
-  auto_ids: true
-  footnote_nr: 1
-  entity_output: as_char
-  toc_levels: 1..6
+  auto_ids: false
   smart_quotes: lsquo,rsquo,ldquo,rdquo
-  enable_coderay: false
 
-# Defaults
-defaults:
-  # _pages
-  - scope:
-      path: ""
-      type: pages
-    values:
-      layout: default
-      author_profile: true
-
-
-# Sass/SCSS
-sass:
-  sass_dir: _sass
-  style: compressed # http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
-
-
-# Outputting
-permalink: /:categories/:title/
-timezone: Asia/Shanghai # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-
-
-# Plugins
 plugins:
-  - jekyll-paginate
   - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
   - jekyll-redirect-from
-# mimic GitHub Pages with --safe
-whitelist:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
-  - jemoji
 
-
-# HTML Compression
-# - http://jch.penibelst.de/
-compress_html:
-  clippings: all
-  ignore:
-    envs: development
+exclude:
+  - README.md
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .bundle
+  - .sass-cache
+  - .jekyll-cache
+  - node_modules
+  - scripts

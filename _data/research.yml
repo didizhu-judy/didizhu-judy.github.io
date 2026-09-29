@@ -1,0 +1,30 @@
+# Research arc. `id` must match the `themes` values used in publications.yml.
+# `works` are publication ids shown as key works under each theme.
+
+- id: align
+  name: Align
+  period: "2021–2024"
+  title: "Robust vision–language models"
+  summary: "Using structure and theory (neural collapse, attention matching, generative flow networks) to make vision–language models generalize beyond the distributions they were trained on."
+  works: [zhu2024neural, zhu2023universal, zhu2023generalized]
+
+- id: compose
+  name: Compose
+  period: "2024–2025"
+  title: "Merging, forgetting and reuse"
+  summary: "Understanding how multimodal models forget, merge and reuse specialized skills during post-training, so capabilities can be added without losing old ones."
+  works: [zhu2024model, zhu2025remedy, zhao2025merging]
+
+- id: reason
+  name: Reason
+  period: "2025–now"
+  title: "RL for multimodal reasoning"
+  summary: "Eliciting reliable reasoning and perception with reinforcement learning and verifiable rewards, and building the data and evaluation pipelines behind open model releases."
+  works: [zhu2025llavaonevision15rl, an2026llavaonevision2, zhu2026visualflip]
+
+- id: generate
+  name: Generate
+  period: "2025–now"
+  title: "Understanding meets generation"
+  summary: "Using understanding models as data engines, reward models and evaluators for generative models, and bringing RL to flow-based visual generation."
+  works: [gao2026adavig, tong2026alleviating, tong2025decoding]

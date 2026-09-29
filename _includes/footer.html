@@ -1,0 +1,19 @@
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <div class="site-footer__sign">
+      <p class="site-footer__name">{{ site.author.name }}</p>
+      <p class="muted">{{ site.author.role }}, {{ site.author.org }}</p>
+    </div>
+    <ul class="site-footer__links" aria-label="Elsewhere">
+      <li><a href="mailto:{{ site.author.email }}">Email</a></li>
+      <li><a href="{{ site.author.scholar }}">Google Scholar</a></li>
+      <li><a href="{{ site.author.github }}">GitHub</a></li>
+      <li><a href="{{ site.author.linkedin }}">LinkedIn</a></li>
+      <li><a href="{{ site.author.x }}">X</a></li>
+    </ul>
+    <div class="site-footer__meta">
+      <p class="muted">© {{ site.time | date: "%Y" }} {{ site.author.name }} · Updated <time datetime="{{ site.time | date: '%Y-%m-%d' }}">{{ site.time | date: "%B %Y" }}</time></p>
+      <a class="to-top" href="#top">{% include icon.html name="arrow-up" %}<span>Back to top</span></a>
+    </div>
+  </div>
+</footer>

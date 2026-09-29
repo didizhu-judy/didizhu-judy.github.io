@@ -1,0 +1,5 @@
+{%- comment -%} Author line with my name highlighted and * shown as a superscript. {%- endcomment -%}
+{%- assign line = include.pub.authors_display | default: include.pub.authors -%}
+{%- assign line = line | replace: site.author.name, '<span class="me">Didi Zhu</span>' | replace: "*", '<sup class="eq">*</sup>' -%}
+{{- line -}}
+{%- if include.pub.authors contains "*" %}<span class="eq-note"> · <sup>*</sup>equal contribution</span>{% endif -%}
