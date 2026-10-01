@@ -406,7 +406,7 @@ main:focus:not(:focus-visible) { outline: none; }
   background: none;
   perspective: 2000px;
 }
-.bcard__body { position: relative; display: grid; transform-style: preserve-3d; }
+.bcard__body { position: relative; display: grid; }
 .bcard__face {
   --glare-hi: var(--card-glare-hi);
   --glare-lo: var(--card-glare-lo);
@@ -418,8 +418,6 @@ main:focus:not(:focus-visible) { outline: none; }
   background: var(--card-face);
   box-shadow: inset 0 0 0 1px var(--line), var(--card-rest);
   overflow: hidden;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
 }
 .bcard__face > :not(canvas):not(.bcard__glare):not(.bcard__curl) { position: relative; z-index: 1; }
 
@@ -604,7 +602,7 @@ main:focus:not(:focus-visible) { outline: none; }
   flex-direction: column;
   justify-content: space-between;
   gap: 24px;
-  transform: rotateX(180deg);
+  visibility: hidden;
   box-shadow: var(--card-rest);
   background: linear-gradient(135deg, var(--card-back-1), var(--card-back-2));
   color: #f4f7f5;
@@ -648,11 +646,14 @@ main:focus:not(:focus-visible) { outline: none; }
 }
 .qr { display: block; width: 100%; height: 100%; }
 
-/* Turned without 3D (reduced motion): the faces simply swap. */
-.bcard.is-static .bcard__back { transform: none; visibility: hidden; }
-.bcard.is-static.is-flipped .bcard__back { visibility: visible; }
-.bcard.is-static.is-flipped .bcard__front { visibility: hidden; }
-.bcard.is-static .bcard__edge { display: none; }
+/* At rest the card is flat and simply shows one face. Only while it turns
+   does it become a 3D object (which also keeps iOS Safari from dropping
+   the contents of a resting 3D card). */
+.bcard.is-flipped .bcard__front { visibility: hidden; }
+.bcard.is-flipped .bcard__back { visibility: visible; }
+.bcard.is-turning .bcard__body { transform-style: preserve-3d; }
+.bcard.is-turning .bcard__face { visibility: visible; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
+.bcard.is-turning .bcard__back { transform: rotateX(180deg); }
 
 @media (max-width: 640px) {
   .bcard__front {
@@ -1041,7 +1042,11 @@ html.js .news:not(.is-expanded) .is-extra { display: none; }
   .rmap.is-live .arc__works { --k: 2; }
   .rmap.is-live .arc__more { --k: 3; }
 }
+@media (hover: none), (max-width: 760px) {
+  .rmap__hint { display: none; }
+}
 @media (max-width: 760px) {
+  .rmap.is-live .rmap__stage { height: 156px; }
   .rmap.is-live .arc__node { display: flex; flex-direction: column; }
   .rmap.is-live .arc__summary { margin-top: 10px; }
   .rmap__node { width: 88px; height: 88px; }

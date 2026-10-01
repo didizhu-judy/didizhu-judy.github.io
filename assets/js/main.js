@@ -176,7 +176,6 @@
     back.setAttribute('inert', '');
     $$('[data-bcard-flip]', card).forEach(function (b) { b.hidden = false; });
     card.classList.add('is-live');
-    if (!motionOK) card.classList.add('is-static');
 
     var TILT_X = 5, TILT_Y = 3.5;
     var rx = 0, ry = 0, trx = 0, tTy = 0, held = 0, tHeld = 0;
@@ -197,8 +196,11 @@
       flipV += (110 * (flipT - flip) - 17 * flipV) * dt;
       flip += flipV * dt;
       var turn = Math.abs(Math.sin(flip * Math.PI / 180));
+      var turning = Math.abs(flipT - flip) > 0.3 || Math.abs(flipV) > 0.5;
+      // The flip rotation only exists while turning; at rest the card is flat
+      // and simply shows the face that is up.
       body.style.transform = 'rotateX(' + rx.toFixed(2) + 'deg) rotateY(' + ry.toFixed(2) + 'deg) rotateX(' +
-        flip.toFixed(2) + 'deg) scale(' + (1 + 0.008 * held + 0.035 * turn).toFixed(4) + ')';
+        (turning ? flip : 0).toFixed(2) + 'deg) scale(' + (1 + 0.008 * held + 0.035 * turn).toFixed(4) + ')';
       body.style.setProperty('--gx', gx.toFixed(1) + '%');
       body.style.setProperty('--gy', gy.toFixed(1) + '%');
       body.style.setProperty('--glare', Math.max(held, turn).toFixed(3));
@@ -207,7 +209,6 @@
         cast.style.opacity = Math.min(1, 0.55 * held + 0.9 * turn).toFixed(3);
         cast.style.transform = 'translate3d(' + (-ry * 2.4).toFixed(1) + 'px,' + (rx * 1.6 + 12 * lift).toFixed(1) + 'px,0)';
       }
-      var turning = Math.abs(flipT - flip) > 0.3 || Math.abs(flipV) > 0.5;
       cardState.turning = turning;
       card.classList.toggle('is-turning', turning);
       var moving = turning || Math.abs(trx - rx) > 0.01 || Math.abs(tTy - ry) > 0.01 || Math.abs(tHeld - held) > 0.003;
@@ -215,7 +216,7 @@
       running = false;
       flip = flipT;
       flipV = 0;
-      if (!flipT && !tHeld) {
+      if (!tHeld) {
         body.style.transform = '';
         body.style.setProperty('--glare', '0');
         if (cast) cast.style.opacity = '0';
@@ -234,7 +235,7 @@
       flipT = next ? 180 : 0;
       (next ? front : back).setAttribute('inert', '');
       (next ? back : front).removeAttribute('inert');
-      if (motionOK) { cardState.turning = true; kick(); }
+      if (motionOK) { cardState.turning = true; card.classList.add('is-turning'); kick(); }
     };
     card.addEventListener('click', function (e) {
       var btn = e.target.closest('[data-bcard-flip]');
@@ -399,13 +400,13 @@
     // Later directions sit in deeper basins; each basin is a tilted ellipse.
     var DEPTH = [0.6, 0.72, 0.86, 1];
     var TILT = [-0.5, 0.35, -0.3, 0.45];
-    var LEVELS = 15;
     var LEG = 2000, SETTLE = 1400, FADE = 350, RESUME = 1200, BLOOM = 1000, BASE = 0.1;
     var W = 0, H = 0, sage = '#557a63', neutral = '#9aa3ad', alphaScale = 1;
     var running = false, frameId = 0, onScreen = false, hiddenAt = 0;
     var detail = $('.arc', wrap);
     var current = -1, inside = false, manual = false, resumeTimer = 0;
-    var C = [], SX = 60, SY = 40;
+    var C = [], SX = 60, SY = 40, SC = 1, levels = 15;
+    var REF_W = 1120, REF_H = 232;
     var contours = [];   // { owner, level, path }
     var legs = [];       // legs[k]: polyline from basin k to k + 1, with cumulative length
     var walk = { k: 0, t0: 0 };
@@ -427,7 +428,7 @@
       return Math.exp(-(u * u) / (2 * SX * SX) - (v * v) / (2 * SY * SY));
     };
     var loss = function (x, y, skip) {
-      var L = 0.3 * (1 - x / W) + 0.08 * Math.pow((y - H * 0.5) / H, 2);
+      var L = 0.3 * (1 - x / W) + 0.08 * Math.pow((y - H * 0.5) / (REF_H * SC), 2);
       for (var k = 0; k < C.length; k++) if (k !== skip) L -= DEPTH[k] * basin(k, x, y);
       return L;
     };
@@ -456,9 +457,9 @@
         groups[key].path.moveTo(x1, y1);
         groups[key].path.lineTo(x2, y2);
       };
-      for (var lv = 0; lv < LEVELS; lv++) {
+      for (var lv = 0; lv < levels; lv++) {
         // Levels crowd towards the minima, as on a loss plot.
-        var t = lo + (hi - lo) * Math.pow((lv + 0.6) / LEVELS, 1.7);
+        var t = lo + (hi - lo) * Math.pow((lv + 0.6) / levels, 1.7);
         for (var cj = 0; cj < ny - 1; cj++) for (var ci = 0; ci < nx - 1; ci++) {
           var a = F[cj * nx + ci], b = F[cj * nx + ci + 1], c = F[(cj + 1) * nx + ci + 1], d = F[(cj + 1) * nx + ci];
           var idx = (a > t ? 8 : 0) | (b > t ? 4 : 0) | (c > t ? 2 : 0) | (d > t ? 1 : 0);
@@ -533,18 +534,23 @@
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       lctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       mctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      C = nodes.map(function (n) { return [n.fx * W, n.fy * H]; });
-      // The basins are sized from the width only, so a shorter strip crops the
-      // landscape instead of squashing it.
-      SX = Math.max(52, W * 0.075);
-      SY = Math.max(40, W * 0.055);
+      // The same landscape at every size: scaled from the desktop strip by
+      // width, so a phone shows a smaller copy rather than a different map, and
+      // a shorter strip crops it rather than squashing it.
+      SC = Math.min(1, W / REF_W);
+      var amp = Math.max(0.21 * REF_H * SC, 26);
+      C = nodes.map(function (n) { return [n.fx * W, H / 2 + (n.fy - 0.5) / 0.21 * amp]; });
+      nodes.forEach(function (n, k) { n.el.style.left = C[k][0] + 'px'; n.el.style.top = C[k][1] + 'px'; });
+      SX = 84 * SC;
+      SY = 61.6 * SC;
+      levels = Math.round(6 + 9 * SC);
       buildContours();
       buildLegs();
       // A resize keeps what has already been revealed this lap.
       if (!motionOK) { mctx.fillStyle = '#000'; mctx.fillRect(0, 0, W, H); }
       else for (var k = 0; k <= Math.min(walk.k, last); k++) reveal(C[k][0], C[k][1], bloomR(), 1);
     };
-    var bloomR = function () { return Math.max(150, SX * 2.9); };
+    var bloomR = function () { return Math.max(60, SX * 2.9); };
     var reveal = function (x, y, r, a) {
       var g = mctx.createRadialGradient(x, y, 0, x, y, r);
       g.addColorStop(0, 'rgba(0,0,0,' + a + ')');
@@ -628,7 +634,7 @@
           mctx.fillRect(0, 0, W, H);
           mctx.globalCompositeOperation = 'source-over';
         } else {
-          reveal(head[0], head[1], Math.max(70, SX * 1.3), 1 - Math.exp(-dt * 2.2));
+          reveal(head[0], head[1], Math.max(30, SX * 1.3), 1 - Math.exp(-dt * 2.2));
         }
         blooms = blooms.filter(function (b) {
           var age = (ms - b.t0) / BLOOM;
@@ -643,7 +649,7 @@
       lctx.clearRect(0, 0, W, H);
       lctx.lineWidth = 1;
       contours.forEach(function (c) {
-        var depth = 1 - c.level / LEVELS;
+        var depth = 1 - c.level / levels;
         var a;
         if (c.owner < 0) {
           lctx.strokeStyle = neutral;
