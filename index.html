@@ -10,47 +10,164 @@ redirect_from:
 {%- assign projects = pubs | where: "project", true -%}
 
 <section class="hero container" aria-labelledby="hero-name">
-  <canvas class="hero__field" data-field aria-hidden="true"></canvas>
-  <div class="hero__text">
-    <p class="eyebrow">{{ site.author.role }} · <a href="{{ site.author.org_url }}">{{ site.author.org }}</a></p>
-    <h1 id="hero-name" class="hero__name" data-split>{{ site.author.name }}</h1>
-
-    <p class="hero__lead">
-      I work on <em>post-training</em> large multimodal models: reinforcement learning for reasoning and perception, verifiable rewards, and the data and evaluation pipelines behind open model releases. A growing part of my work is on <em>multimodal agents</em> and <em>generation</em>.
-    </p>
-
-    <div class="hero__bio">
-      <p>At Imperial, I work with <a href="https://jiankangdeng.github.io/">Prof. Jiankang Deng</a> and <a href="https://wp.doc.ic.ac.uk/szafeiri/">Prof. Stefanos Zafeiriou</a>. I received my Ph.D. from Zhejiang University, advised by <a href="https://wuchaozju.github.io/">Prof. Chao Wu</a> and co-supervised by <a href="https://kunkuang.github.io/">Prof. Kun Kuang</a> and <a href="https://mypage.zju.edu.cn/wufei">Prof. Fei Wu</a>, and was fortunate to collaborate with Yibing Song at Alibaba DAMO Academy.</p>
-      <p>I am always open to collaborations and conversations with fellow researchers. Recently in London, I have been collecting sunsets, parks, coffee conversations, and new research questions.</p>
+  <div class="bento">
+    <div class="tile tile--intro bcard" data-bcard>
+      <div class="bcard__shadow" aria-hidden="true"></div>
+      <div class="bcard__body">
+        <div class="bcard__face bcard__front">
+          <canvas class="tile__canvas" data-field aria-hidden="true"></canvas>
+          <div class="bcard__top">
+            <p class="bcard__org"><span class="bcard__mark" aria-hidden="true"></span><a href="{{ site.author.org_url }}">{{ site.author.org }}</a></p>
+          </div>
+          <div class="bcard__id">
+            <h1 id="hero-name" class="hero__name" data-split>{{ site.author.name }}</h1>
+            <p class="bcard__role">{{ site.author.role }}</p>
+          </div>
+          <dl class="bcard__fields">
+            <div><dt>Department</dt><dd>{{ site.author.dept | remove: "Department of " }}</dd></div>
+            <div><dt>Email</dt><dd><a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></dd></div>
+            <div><dt>Based in</dt><dd>{{ site.author.location | replace: "United Kingdom", "UK" }}</dd></div>
+          </dl>
+          <div class="bcard__photo">
+            <img class="portrait"
+                 src="{{ '/images/profile/avatar-640.webp' | relative_url }}"
+                 srcset="{{ '/images/profile/avatar-320.webp' | relative_url }} 320w, {{ '/images/profile/avatar-640.webp' | relative_url }} 640w"
+                 sizes="(min-width: 760px) 260px, 96px"
+                 width="640" height="640" alt="Photo of {{ site.author.name }}" fetchpriority="high" decoding="async">
+          </div>
+          <span class="bcard__glare" aria-hidden="true"></span>
+          <button class="bcard__curl" type="button" data-bcard-flip aria-label="Turn the card over" title="Turn over" hidden></button>
+        </div>
+        <div class="bcard__face bcard__back" hidden>
+          <canvas class="tile__canvas" data-field data-field-tone="light" aria-hidden="true"></canvas>
+          <div class="bcard__top">
+            <p class="bcard__org"><span class="bcard__mark" aria-hidden="true"></span>{{ site.author.name }}</p>
+          </div>
+          <div class="bcard__scan">
+            <div class="bcard__scan-text">
+              <p class="bcard__url">{{ site.display_url | default: site.url }}</p>
+              <p class="bcard__scan-note">Scan to open this page on your phone, or save my details to your contacts.</p>
+              <a class="bcard__save" href="{{ '/didi-zhu.vcf' | relative_url }}" download="Didi-Zhu.vcf">{% include icon.html name="user-plus" %}Save contact</a>
+            </div>
+            <div class="bcard__qr">{% include qr-home.svg %}</div>
+          </div>
+          <span class="bcard__glare" aria-hidden="true"></span>
+          <button class="bcard__curl" type="button" data-bcard-flip aria-label="Turn the card back" title="Turn back"></button>
+        </div>
+        <span class="bcard__edge" aria-hidden="true"></span>
+      </div>
     </div>
 
-    <ul class="hero__links" aria-label="Contact and profiles">
-      <li class="email-group">
-        <a class="btn btn--primary" href="mailto:{{ site.author.email }}">{% include icon.html name="mail" %}<span>Email</span></a>
-        <button class="icon-btn icon-btn--outline" type="button" data-copy-text="{{ site.author.email }}" data-copy-label="Email address" aria-label="Copy email address">{% include icon.html name="copy" %}</button>
-      </li>
-      <li><a class="btn" href="{{ site.author.scholar }}">{% include icon.html name="scholar" %}<span>Google Scholar</span></a></li>
-      <li><a class="btn" href="{{ site.author.github }}">{% include icon.html name="github" %}<span>GitHub</span></a></li>
-      <li><a class="btn" href="{{ site.author.linkedin }}">{% include icon.html name="linkedin" %}<span>LinkedIn</span></a></li>
-      <li><a class="btn" href="{{ site.author.x }}">{% include icon.html name="x" %}<span>X</span></a></li>
-    </ul>
+    <div class="tile tile--research">
+      <p class="tile__label">Research</p>
+      <p class="tile__lead">I work on <em>post-training</em> large multimodal models: reinforcement learning for reasoning and perception, verifiable rewards, and the data and evaluation pipelines behind open model releases. A growing part of my work is on <em>multimodal agents</em> and <em>generation</em>.</p>
+    </div>
+
+    <div class="tile tile--about">
+      <p class="tile__label">About</p>
+      <p>I am currently a Postdoctoral Research Associate at Imperial College London, working with <a href="https://jiankangdeng.github.io/">Prof. Jiankang Deng</a> and <a href="https://wp.doc.ic.ac.uk/szafeiri/">Prof. Stefanos Zafeiriou</a>. I received my Ph.D. from Zhejiang University, advised by <a href="https://wuchaozju.github.io/">Prof. Chao Wu</a> and co-supervised by <a href="https://kunkuang.github.io/">Prof. Kun Kuang</a> and <a href="https://mypage.zju.edu.cn/wufei">Prof. Fei Wu</a>, and was fortunate to collaborate with Yibing Song at Alibaba DAMO Academy.</p>
+    </div>
+
+    <div class="tile tile--links">
+      <p class="tile__label">Contact</p>
+      <ul class="contact" aria-label="Contact and profiles">
+        <li class="contact__row">
+          <a href="mailto:{{ site.author.email }}">{% include icon.html name="mail" %}<span>Email</span><span class="contact__meta">{{ site.author.email }}</span></a>
+          <button class="icon-btn contact__copy" type="button" data-copy-text="{{ site.author.email }}" data-copy-label="Email address" aria-label="Copy email address">{% include icon.html name="copy" %}</button>
+        </li>
+        <li class="contact__row"><a href="{{ site.author.scholar }}">{% include icon.html name="scholar" %}<span>Google Scholar</span><span class="contact__meta">{% include icon.html name="arrow-up-right" %}</span></a></li>
+        <li class="contact__row"><a href="{{ site.author.github }}">{% include icon.html name="github" %}<span>GitHub</span><span class="contact__meta">{% include icon.html name="arrow-up-right" %}</span></a></li>
+        <li class="contact__row"><a href="{{ site.author.linkedin }}">{% include icon.html name="linkedin" %}<span>LinkedIn</span><span class="contact__meta">{% include icon.html name="arrow-up-right" %}</span></a></li>
+        <li class="contact__row"><a href="{{ site.author.x }}">{% include icon.html name="x" %}<span>X</span><span class="contact__meta">{% include icon.html name="arrow-up-right" %}</span></a></li>
+      </ul>
+    </div>
   </div>
+</section>
 
-  <div class="hero__portrait">
-    <div class="portrait-frame">
-    <img class="portrait"
-         src="{{ '/images/profile/avatar-640.webp' | relative_url }}"
-         srcset="{{ '/images/profile/avatar-320.webp' | relative_url }} 320w, {{ '/images/profile/avatar-640.webp' | relative_url }} 640w"
-         sizes="(min-width: 860px) 320px, 200px"
-         width="640" height="640" alt="Photo of {{ site.author.name }}" fetchpriority="high" decoding="async">
+<section id="research" class="section container" aria-labelledby="research-title">
+  <header class="section__head">
+    <div class="section__heading">
+      <span class="section__num" aria-hidden="true">01</span>
+      <h2 id="research-title" class="section__title">Research</h2>
     </div>
+    <p class="section__lede">A path from making vision–language models robust, to composing their skills, to teaching them to reason, and now to connecting understanding with generation.</p>
+  </header>
+  <div class="rmap" data-rmap>
+    <div class="rmap__stage">
+      <canvas class="rmap__canvas" aria-hidden="true"></canvas>
+      {%- for t in site.data.research %}
+      <button class="rmap__node arc__node--{{ t.id }}" type="button" data-node="{{ t.id }}" aria-pressed="false" aria-controls="research-detail" style="--x: {{ t.map_x }}; --y: {{ t.map_y }}">
+        <span class="rmap__label">{{ t.name }}</span>
+        <span class="rmap__period">{{ t.period }}</span>
+      </button>
+      {%- endfor %}
+      <p class="rmap__hint">Hover a direction to explore</p>
+    </div>
+  <ol class="arc" id="research-detail" aria-live="polite">
+    {%- for t in site.data.research %}
+    {%- assign n = pubs | where_exp: "p", "p.themes contains t.id" | size %}
+    <li class="arc__node arc__node--{{ t.id }}" data-node-panel="{{ t.id }}" style="--i: {{ forloop.index0 }}">
+      <div class="arc__rail" aria-hidden="true"><span class="arc__dot"></span></div>
+      <p class="arc__period"><span class="arc__index">0{{ forloop.index }}</span>{{ t.period }}</p>
+      <h3 class="arc__name">{{ t.name }}</h3>
+      <p class="arc__title">{{ t.title }}</p>
+      <p class="arc__summary">{{ t.summary }}</p>
+      <ul class="arc__works" aria-label="Key {{ t.name }} papers">
+        {%- for id in t.works %}
+        {%- assign w = pubs | where: "id", id | first %}
+        <li><a href="#pub-{{ w.id }}">{{ w.short | default: w.title }}</a><span class="venue venue--plain">{{ w.venue }}</span></li>
+        {%- endfor %}
+      </ul>
+      <a class="arc__more" href="?theme={{ t.id }}#all-publications" data-theme-link="{{ t.id }}">{{ n }} papers{% include icon.html name="arrow-right" %}</a>
+    </li>
+    {%- endfor %}
+  </ol>
+  </div>
+</section>
+
+<section id="experience" class="section container" aria-labelledby="exp-title">
+  <header class="section__head">
+    <div class="section__heading">
+      <span class="section__num" aria-hidden="true">02</span>
+      <h2 id="exp-title" class="section__title">Experience</h2>
+    </div>
+  </header>
+  <div class="path" data-path>
+    <div class="path__scroller" data-path-scroller tabindex="0" aria-label="Career timeline, scroll sideways for earlier entries">
+      <div class="path__track">
+        <span class="path__rail" aria-hidden="true"><span class="path__fill"></span><span class="path__head"></span></span>
+        <ol class="path__list">
+          {%- for it in site.data.cv.experience %}
+          <li class="path__item path__item--{{ it.kind }}{% if forloop.last %} is-now{% endif %}">
+            <span class="path__dot" aria-hidden="true"></span>
+            <div class="path__top">
+              {%- if it.logo %}
+              <img class="path__logo{% if it.logo_wide %} path__logo--wide{% endif %}" src="{{ it.logo | relative_url }}" alt="" {% if it.logo_wide %}width="104"{% else %}width="40"{% endif %} height="40" loading="lazy" decoding="async">
+              {%- endif %}
+              <div>
+                <p class="path__kind">{{ it.kind | capitalize }}{% if forloop.last %}<span class="path__now">Now</span>{% endif %}</p>
+                <p class="path__period">{{ it.period }}</p>
+              </div>
+            </div>
+            <h3 class="path__org">{{ it.org }}</h3>
+            <p class="path__role">{{ it.role }}</p>
+            {%- if it.note %}
+            <p class="path__note">{{ it.note | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>
+            {%- endif %}
+          </li>
+          {%- endfor %}
+        </ol>
+      </div>
+    </div>
+    <span class="path__edge path__edge--prev" aria-hidden="true">{% include icon.html name="arrow-left" %}</span>
+    <span class="path__edge path__edge--next" aria-hidden="true">{% include icon.html name="arrow-right" %}</span>
   </div>
 </section>
 
 <section id="news" class="section container" aria-labelledby="news-title">
   <header class="section__head">
     <div class="section__heading">
-      <span class="section__num" aria-hidden="true">01</span>
+      <span class="section__num" aria-hidden="true">03</span>
       <h2 id="news-title" class="section__title">News</h2>
     </div>
   </header>
@@ -70,39 +187,10 @@ redirect_from:
   </div>
 </section>
 
-<section id="research" class="section container" aria-labelledby="research-title">
-  <header class="section__head">
-    <div class="section__heading">
-      <span class="section__num" aria-hidden="true">02</span>
-      <h2 id="research-title" class="section__title">Research</h2>
-    </div>
-    <p class="section__lede">A path from making vision–language models robust, to composing their skills, to teaching them to reason, and now to connecting understanding with generation.</p>
-  </header>
-  <ol class="arc">
-    {%- for t in site.data.research %}
-    {%- assign n = pubs | where_exp: "p", "p.themes contains t.id" | size %}
-    <li class="arc__node arc__node--{{ t.id }}" style="--i: {{ forloop.index0 }}">
-      <div class="arc__rail" aria-hidden="true"><span class="arc__dot"></span></div>
-      <p class="arc__period"><span class="arc__index">0{{ forloop.index }}</span>{{ t.period }}</p>
-      <h3 class="arc__name">{{ t.name }}</h3>
-      <p class="arc__title">{{ t.title }}</p>
-      <p class="arc__summary">{{ t.summary }}</p>
-      <ul class="arc__works" aria-label="Key {{ t.name }} papers">
-        {%- for id in t.works %}
-        {%- assign w = pubs | where: "id", id | first %}
-        <li><a href="#pub-{{ w.id }}">{{ w.short | default: w.title }}</a><span class="venue venue--plain">{{ w.venue }}</span></li>
-        {%- endfor %}
-      </ul>
-      <a class="arc__more" href="?theme={{ t.id }}#all-publications" data-theme-link="{{ t.id }}">{{ n }} papers{% include icon.html name="arrow-right" %}</a>
-    </li>
-    {%- endfor %}
-  </ol>
-</section>
-
 <section id="projects" class="section container" aria-labelledby="projects-title">
   <header class="section__head">
     <div class="section__heading">
-      <span class="section__num" aria-hidden="true">03</span>
+      <span class="section__num" aria-hidden="true">04</span>
       <h2 id="projects-title" class="section__title">Projects</h2>
     </div>
     <p class="section__lede">Open multimodal model releases I have worked on, with code, data and checkpoints.</p>
@@ -117,7 +205,7 @@ redirect_from:
 <section id="publications" class="section container" aria-labelledby="pubs-title">
   <header class="section__head">
     <div class="section__heading">
-      <span class="section__num" aria-hidden="true">04</span>
+      <span class="section__num" aria-hidden="true">05</span>
       <h2 id="pubs-title" class="section__title">Publications</h2>
     </div>
     <p class="section__lede">Selected first-author papers, then everything, newest first. <a href="{{ site.author.scholar }}">Google Scholar</a> has citation counts.</p>
@@ -160,36 +248,6 @@ redirect_from:
     </section>
     {%- endfor %}
     <p class="pubs__empty" data-pub-empty hidden>No papers match these filters. <button class="linkish" type="button" data-filter-reset>Show all papers</button></p>
-  </div>
-</section>
-
-<section id="experience" class="section container" aria-labelledby="exp-title">
-  <header class="section__head">
-    <div class="section__heading">
-      <span class="section__num" aria-hidden="true">05</span>
-      <h2 id="exp-title" class="section__title">Experience</h2>
-    </div>
-  </header>
-  <div class="timeline">
-    {%- for g in site.data.cv.experience %}
-    <div class="timeline__group">
-      <h3 class="timeline__label">{{ g.group }}</h3>
-      <ol class="timeline__list">
-        {%- for it in g.items %}
-        <li class="timeline__item">
-          <p class="timeline__period">{{ it.period }}</p>
-          <div class="timeline__body">
-            <h4 class="timeline__role">{{ it.role }}</h4>
-            <p class="timeline__org">{{ it.org }}<span class="timeline__where">{{ it.where }}</span></p>
-            {%- if it.note %}
-            <p class="timeline__note">{{ it.note | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>
-            {%- endif %}
-          </div>
-        </li>
-        {%- endfor %}
-      </ol>
-    </div>
-    {%- endfor %}
   </div>
 </section>
 

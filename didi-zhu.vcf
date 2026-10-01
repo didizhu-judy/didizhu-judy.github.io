@@ -1,0 +1,18 @@
+---
+layout: null
+permalink: /didi-zhu.vcf
+sitemap: false
+---
+BEGIN:VCARD
+VERSION:3.0
+N:{{ site.author.family_name }};{{ site.author.given_name }};;;
+FN:{{ site.author.name }}
+ORG:{{ site.author.org }};{{ site.author.dept }}
+ADR;TYPE=WORK:;;;London;;;United Kingdom
+TITLE:{{ site.author.role }}
+EMAIL;TYPE=INTERNET,WORK:{{ site.author.email }}
+URL:{{ site.url }}/
+X-SOCIALPROFILE;TYPE=github:{{ site.author.github }}
+X-SOCIALPROFILE;TYPE=linkedin:{{ site.author.linkedin }}
+X-SOCIALPROFILE;TYPE=twitter:{{ site.author.x }}
+END:VCARD

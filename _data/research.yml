@@ -1,7 +1,10 @@
 # Research arc. `id` must match the `themes` values used in publications.yml.
 # `works` are publication ids shown as key works under each theme.
+# `map_x` / `map_y` place the theme on the research map (percent of its width / height).
 
 - id: align
+  map_x: "12%"
+  map_y: "71%"
   name: Align
   period: "2021–2024"
   title: "Robust vision–language models"
@@ -9,6 +12,8 @@
   works: [zhu2024neural, zhu2023universal, zhu2023generalized]
 
 - id: compose
+  map_x: "37%"
+  map_y: "29%"
   name: Compose
   period: "2024–2025"
   title: "Merging, forgetting and reuse"
@@ -16,6 +21,8 @@
   works: [zhu2024model, zhu2025remedy, zhao2025merging]
 
 - id: reason
+  map_x: "63%"
+  map_y: "71%"
   name: Reason
   period: "2025–now"
   title: "RL for multimodal reasoning"
@@ -23,6 +30,8 @@
   works: [zhu2025llavaonevision15rl, an2026llavaonevision2, zhu2026visualflip]
 
 - id: generate
+  map_x: "88%"
+  map_y: "29%"
   name: Generate
   period: "2025–now"
   title: "Understanding meets generation"

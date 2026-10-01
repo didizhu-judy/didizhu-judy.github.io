@@ -9,6 +9,8 @@ description: >-
   for reasoning and perception, verifiable rewards, and increasingly multimodal
   agents and generation.
 url: "https://didizhu-judy.github.io"
+# Shown on the back of the business card (jekyll serve rewrites `url` to localhost).
+display_url: "didizhu-judy.github.io"
 baseurl: ""
 lang: en
 timezone: Europe/London

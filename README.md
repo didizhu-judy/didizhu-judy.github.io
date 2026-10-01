@@ -13,6 +13,16 @@ lives in YAML files under `_data/`, so everyday updates never touch HTML.
 | Publications | `_data/publications.yml`, add an entry (newest first) |
 | Research themes (the four-step arc) | `_data/research.yml` |
 | Experience, honors, service | `_data/cv.yml` |
+
+**Experience timeline.** `experience` in `_data/cv.yml` is one list, oldest first; the
+last entry is shown as "Now". Each entry has `kind` (`education`, `industry` or
+`position`), `period`, `role`, `org`, an optional `note` (Markdown) and `logo`, a small
+image in `images/logos/` (square; add `logo_wide: true` for a wordmark).
+
+**Business card.** The hero card reads name, role, organisation, department, email and
+location from `author` in `_config.yml`. Its back shows a QR code for the site
+(`_includes/qr-home.svg`) and a "Save contact" link to `didi-zhu.vcf`, which is filled in
+from the same settings. If the site address ever changes, regenerate the QR code.
 | Name, links, email | `_config.yml` |
 | Hero text and bio | `index.html`, the `hero` section |
 

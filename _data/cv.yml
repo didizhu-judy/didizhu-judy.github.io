@@ -1,38 +1,48 @@
 # Experience, honors and service. Text fields accept Markdown.
 
+# Career path, oldest first. It is drawn as a horizontal timeline under the
+# hero that plays forward to the last entry, which is marked as "now".
+# kind: education | industry | position; logo: a small square image.
 experience:
-  - group: Position
-    items:
-      - period: "Sep 2025 – now"
-        role: "Postdoctoral Research Associate"
-        org: "Imperial College London"
-        where: "Department of Computing · London, UK"
-        note: "Working with [Prof. Jiankang Deng](https://jiankangdeng.github.io/) and [Prof. Stefanos Zafeiriou](https://wp.doc.ic.ac.uk/szafeiri/)."
+  - kind: education
+    period: "Sep 2016 – Jun 2020"
+    role: "B.S. in Computer Science and Technology"
+    org: "Beijing University of Chemical Technology"
+    logo: "/images/logos/buct.webp"
+    where: "Beijing, China"
 
-  - group: Education
-    items:
-      - period: "Sep 2020 – Jun 2025"
-        role: "Ph.D. in Computer Science and Technology"
-        org: "Zhejiang University"
-        where: "Hangzhou, China"
-        note: "Advised by [Prof. Chao Wu](https://wuchaozju.github.io/), co-supervised by [Prof. Kun Kuang](https://kunkuang.github.io/) and [Prof. Fei Wu](https://mypage.zju.edu.cn/wufei)."
-      - period: "Sep 2016 – Jun 2020"
-        role: "B.S. in Computer Science and Technology"
-        org: "Beijing University of Chemical Technology"
-        where: "Beijing, China"
+  - kind: education
+    period: "Sep 2020 – Jun 2025"
+    role: "Ph.D. in Computer Science and Technology"
+    org: "Zhejiang University"
+    logo: "/images/logos/zju.webp"
+    where: "Hangzhou, China"
+    note: "Advised by [Prof. Chao Wu](https://wuchaozju.github.io/), co-supervised by [Prof. Kun Kuang](https://kunkuang.github.io/) and [Prof. Fei Wu](https://mypage.zju.edu.cn/wufei)."
 
-  - group: Industry
-    items:
-      - period: "Mar 2024 – Mar 2025"
-        role: "Research Intern, Multimodal LLMs"
-        org: "Alibaba DAMO Academy"
-        where: "Hangzhou, China"
-        note: "With Yibing Song. Led to [REMEDY](#pub-zhu2025remedy) (ICLR 2025)."
-      - period: "Oct 2023 – Feb 2024"
-        role: "Research Intern, Multimodal LLMs"
-        org: "Tencent Youtu Lab"
-        where: "Shanghai, China"
-        note: "With Zhongyi Sun. Led to [Model Tailor](#pub-zhu2024model) (ICML 2024)."
+  - kind: industry
+    period: "Oct 2023 – Feb 2024"
+    role: "Research Intern, Multimodal LLMs"
+    org: "Tencent Youtu Lab"
+    logo: "/images/logos/tencent.webp"
+    logo_wide: true
+    where: "Shanghai, China"
+    note: "With Zhongyi Sun. Led to [Model Tailor](#pub-zhu2024model) (ICML 2024)."
+
+  - kind: industry
+    period: "Mar 2024 – Mar 2025"
+    role: "Research Intern, Multimodal LLMs"
+    org: "Alibaba DAMO Academy"
+    logo: "/images/logos/damo.webp"
+    where: "Hangzhou, China"
+    note: "With Yibing Song. Led to [REMEDY](#pub-zhu2025remedy) (ICLR 2025)."
+
+  - kind: position
+    period: "Sep 2025 – now"
+    role: "Postdoctoral Research Associate"
+    org: "Imperial College London"
+    logo: "/images/logos/imperial.svg"
+    where: "Department of Computing · London, UK"
+    note: "Working with [Prof. Jiankang Deng](https://jiankangdeng.github.io/) and [Prof. Stefanos Zafeiriou](https://wp.doc.ic.ac.uk/szafeiri/)."
 
 honors:
   - year: "2024"
